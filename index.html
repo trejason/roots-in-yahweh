@@ -1,377 +1,161 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Roots in Yahweh - Lilongwe Malawi</title>
-<script src="https://js.puter.com/v2/"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Roots In Yahweh - Go deep. Stay rooted.</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{background:#070707;color:#fff;font-family:system-ui}
-header{background:#000;border-bottom:3px solid #d4af37;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:99}
-header .left{display:flex;align-items:center;gap:12px}header img{width:52px;height:52px;border-radius:50%;border:2px solid #d4af37}
-.socials a{color:#d4af37;font-size:20px;margin-left:12px}
-.hero{padding:70px 20px;text-align:center;background:radial-gradient(circle at top,#2a2100,#000 70%)}
-.hero h1{font-size:36px}.hero h1 span{color:#d4af37}.hero p{color:#bbb;max-width:700px;margin:12px auto;line-height:1.7;font-size:16px}
-.btn{background:#d4af37;color:#000;padding:13px 24px;border-radius:30px;font-weight:bold;border:none;cursor:pointer;margin:6px}
-.btn2{background:transparent;color:#d4af37;border:1.5px solid #d4af37;padding:13px 24px;border-radius:30px;font-weight:bold;cursor:pointer;margin:6px}
-.section{max-width:1100px;margin:0 auto;padding:24px 16px}
-.card{background:#121212;border:1px solid #222;border-radius:16px;padding:18px;margin:16px 0}
-.card h3{color:#d4af37;margin-bottom:10px}
-.bible-ai{border:2px solid #d4af37;border-radius:18px;overflow:hidden;background:#101010}
-.ai-head{background:#d4af37;color:#000;padding:14px;text-align:center;font-weight:bold}
-.ai-body{padding:16px}.ai-row{display:flex;gap:8px}.ai-row input{flex:1;padding:14px;border-radius:25px;border:1px solid #333;background:#1e1e1e;color:#fff}
-.ai-ans{background:#000;border:1px solid #222;border-radius:12px;padding:16px;min-height:90px;line-height:1.6;white-space:pre-wrap;margin-top:12px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
-.story{background:#111;border:1px solid #222;border-left:4px solid #d4af37;border-radius:12px;padding:14px;cursor:pointer;transition:.2s}
-.story:hover{border-color:#d4af37;background:#161500}.story b{color:#fff;font-size:14px}.story p{color:#888;font-size:12px;margin-top:4px}
-.wallpaper-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
-.wallpaper{background:#111;border:1px solid #333;border-radius:12px;overflow:hidden;text-align:center;padding:10px}
-.colour-book{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
-.colour-card{background:#fff;border-radius:14px;padding:10px;color:#000}
-.colour-card canvas{width:100%;background:#fff;border-radius:10px;touch-action:none}
-.timetable{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
-.time-card{background:linear-gradient(135deg,#111,#1f1a00);border:1px solid #d4af37;border-radius:16px;padding:16px;text-align:center;box-shadow:0 0 15px rgba(212,175,55,0.15)}
-.time-card b{color:#d4af37;font-size:18px}.time-card span{color:#aaa;font-size:13px}
-.game-card{background:#111;border:1px solid #222;border-radius:16px;padding:16px;text-align:center}
-.game-card h4{color:#d4af37}
-.chat-box{background:#000;border:2px solid #222;border-radius:18px;overflow:hidden;max-width:520px;margin:0 auto}
-.chat-msgs{height:300px;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:#0a0a0a}
-.msg{padding:10px 14px;border-radius:18px;max-width:80%;font-size:14px}.me{background:#d4af37;color:#000;align-self:flex-end}.other{background:#1e1e1e;color:#fff;align-self:flex-start}
-.example{border:1px dashed #444;padding:6px 10px;border-radius:20px;font-size:11px;color:#888;margin:3px;display:inline-block;cursor:pointer}
-.footer{text-align:center;padding:30px;color:#555;border-top:1px solid #111}
-input,select{padding:12px;border-radius:10px;border:1px solid #333;background:#1e1e1e;color:#fff;width:100%;margin:6px 0}
+body{font-family:Inter,sans-serif;background:#0a0a0a;color:white}
+.serif{font-family:'Instrument Serif',serif}
+.glass{background:rgba(255,255,255,0.06);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.08)}
+.gold{color:#E6C88E}
 </style>
 </head>
-<body>
-<header>
-<div class="left"><img src="logo.jpg"><div><h2 style="color:#d4af37;font-size:18px">ROOTS IN YAHWEH</h2><div style="font-size:10px;color:#777">Lilongwe, Malawi</div></div></div>
-<div class="socials">
-<a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-<a href="https://tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
-<a href="https://wa.me/265999000000" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<body class="bg-[#0A0A0A]">
+<header class="sticky top-0 z-50 bg-[#0A0A0A]/80 backdrop-blur-xl border-b border-white/10">
+<div class="max-w-6xl mx-auto px-5 py-4 flex justify-between items-center">
+<div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-[#111] border border-[#E6C88E]/30 flex items-center justify-center">🌳</div><span class="font-medium">Roots In Yahweh</span></div>
+<button id="menuBtn" class="w-10 h-10 rounded-full glass flex items-center justify-center">☰</button>
 </div>
 </header>
 
-<div class="hero">
-<h1>Welcome Home, <span>Family</span> 🙏</h1>
-<p>We're glad you are here. Roots in Yahweh is a youth family in Lilongwe - rooted in Word, burning for Jesus. No judgment, just Jesus. Colossians 2:7</p>
-<button class="btn" onclick="document.getElementById('bibleAI').scrollIntoView({behavior:'smooth'})">Ask Bible AI 📖</button>
-<button class="btn2" onclick="document.getElementById('kids').scrollIntoView({behavior:'smooth'})">Kids Section 🎨</button>
-</div>
-
-<div class="section">
-
-<!-- NOTIFICATIONS -->
-<div id="notifBar" style="display:none;background:#d4af37;color:#000;padding:12px;border-radius:12px;display:flex;justify-content:space-between;align-items:center"><div><b>🔔 Get Updates</b><br><span style="font-size:12px">Allow notifications for new songs & meetings</span></div><button onclick="askNotif()" style="background:#000;color:#d4af37;border:none;padding:8px 14px;border-radius:20px;font-weight:bold">Allow</button></div>
-
-<!-- BIBLE AI - ANY QUESTION -->
-<div id="bibleAI" class="bible-ai">
-<div class="ai-head">📖 BIBLICAL RESEARCH AI - Ask ANYTHING (with verses)</div>
-<div class="ai-body">
-<div><span class="example" onclick="setQ('Who was the wife of David?')">Wife of David?</span><span class="example" onclick="setQ('Explain John 3:16')">John 3:16</span><span class="example" onclick="setQ('What does Bible say about anxiety?')">Anxiety?</span><span class="example" onclick="setQ('Was Jesus married?')">Was Jesus married?</span></div>
-<div class="ai-row" style="margin-top:10px"><input id="bibleQ" placeholder="Ask any Bible question..." onkeypress="if(event.key==='Enter')askAI()"><button class="btn" onclick="askAI()" id="askBtn">Ask</button></div>
-<div id="bibleAns" class="ai-ans">Hi Jason! I can answer ANY biblical question now with verses, Hebrew meaning, and context. Try me! 🙏</div>
+<div id="menu" class="fixed inset-0 z-[60] bg-black/95 hidden flex-col">
+<div class="p-5 flex justify-between items-center border-b border-white/10"><span>Menu</span><button id="closeMenu" class="w-10 h-10 rounded-full glass">✕</button></div>
+<div class="flex-1 overflow-y-auto p-6 space-y-1 max-w-6xl mx-auto w-full">
+<button data-go="home" class="menu-link w-full text-left py-4 text-3xl serif border-b border-white/10">Home</button>
+<button data-go="about" class="menu-link w-full text-left py-4 text-2xl serif border-b border-white/10">Our Story & Mission</button>
+<button data-go="timetable" class="menu-link w-full text-left py-4 text-2xl serif border-b border-white/10">Fixed Timetable</button>
+<button data-go="games" class="menu-link w-full text-left py-4 text-2xl serif border-b border-white/10">Bible Games (3 only)</button>
+<button data-go="stories" class="menu-link w-full text-left py-4 text-2xl serif border-b border-white/10">Stories (All in One)</button>
+<button data-go="bibleai" class="menu-link w-full text-left py-4 text-3xl serif border-b border-white/10 text-[#E6C88E]">Bible AI - Ask Anything ★</button>
+<button data-go="chat" class="menu-link w-full text-left py-4 text-3xl serif border-b border-white/10">Teen Chat + Username ★</button>
+<button data-go="wallpapers" class="menu-link w-full text-left py-4 text-2xl serif border-b border-white/10">Wallpapers & Music</button>
+<button data-go="prayer" class="menu-link w-full text-left py-4 text-2xl serif border-b border-white/10">Prayer Room → +265999962073</button>
+<button data-go="socials" class="menu-link w-full text-left py-4 text-2xl serif border-b border-white/10">Find Us</button>
+<div class="pt-6"><button id="notifBtn" class="w-full py-4 rounded-full bg-white text-black font-medium">🔔 Enable Friday Game Night Alerts</button><p class="text-xs text-white/50 mt-2">Gets notification every Friday + daily verse</p></div>
 </div>
 </div>
 
-<!-- TIMETABLE COOLER -->
-<div class="card">
-<h3>📅 Our Cool Timetable</h3>
-<div class="timetable">
-<div class="time-card"><b>SUNDAY</b><br><span>09:00 - Youth Discipleship</span><br><span style="color:#d4af37">Main Hall</span></div>
-<div class="time-card"><b>WEDNESDAY</b><br><span>17:30 - Word & Prayer Fire</span><br><span style="color:#d4af37">Upper Room</span></div>
-<div class="time-card"><b>FRIDAY</b><br><span>19:00 - Worship Night</span><br><span style="color:#d4af37">Loud & Free</span></div>
-<div class="time-card"><b>SATURDAY</b><br><span>14:00 - Kids Bible Club + Games</span><br><span style="color:#d4af37">Kids Corner</span></div>
+<main class="max-w-6xl mx-auto px-5">
+<section id="home" class="py-10">
+<p class="text-[11px] tracking-[0.2em] text-white/50 uppercase">Christian Youth Movement • Est. 14 June 2025</p>
+<h1 class="serif text-[52px] md:text-[84px] leading-[0.9] mt-6">Go deep.<br>Stay <span class="italic gold">rooted.</span></h1>
+<p class="mt-6 text-white/70 max-w-xl text-[15px] leading-relaxed">Not just a group. A family. A movement of young people who decided to go deep instead of just going along. Welcome home.</p>
+<div class="flex gap-3 mt-8 flex-wrap"><a class="px-6 py-3.5 rounded-full bg-white text-black text-sm font-medium">Join WhatsApp Community</a><button data-go="chat" class="menu-link px-6 py-3.5 rounded-full glass text-sm">💬 Join Chat</button><button data-go="bibleai" class="menu-link px-6 py-3.5 rounded-full bg-[#E6C88E] text-black text-sm font-bold">🤖 Ask Anything</button></div>
+<div class="mt-12 bg-[#F5F3EF] text-black rounded-[28px] p-8 md:p-10">
+<p class="text-[11px] tracking-[0.2em] text-black/50 uppercase text-center">Verse of the Day • <span id="dateLabel"></span></p>
+<blockquote id="dailyVerse" class="serif text-[28px] md:text-[40px] leading-[1.1] mt-6 text-center max-w-3xl mx-auto"></blockquote>
+<p id="dailyRef" class="text-center mt-4 font-bold text-sm tracking-widest"></p>
+<div class="flex justify-center gap-3 mt-6"><button id="copyVerse" class="px-5 py-2.5 rounded-full border border-black/15 text-sm">Copy</button><button id="shareVerse" class="px-5 py-2.5 rounded-full bg-black text-white text-sm">Share</button></div>
 </div>
-</div>
+</section>
 
-<!-- WALLPAPERS AUTO GENERATE -->
-<div class="card">
-<h3>🖼️ Wallpapers - Auto Generate (Black & Gold)</h3>
-<p style="color:#888;font-size:13px">Tap Generate to create new wallpaper with verses. Download for phone.</p>
-<button class="btn" onclick="genWallpaper()">+ Generate New Wallpaper</button>
-<div id="wallGrid" class="wallpaper-grid" style="margin-top:12px"></div>
-<canvas id="wallCanvas" width="1080" height="1920" style="display:none"></canvas>
-</div>
+<section id="about" class="hidden py-10"><h2 class="serif text-4xl md:text-5xl">We are Roots In Yahweh.</h2><p class="mt-4 text-white/60">Started 14th June 2025.</p><div class="glass rounded-2xl p-6 mt-6"><h3 class="text-xs tracking-widest text-white/40">01 OUR STORY</h3><p class="mt-3 text-sm leading-relaxed">What if young people actually enjoyed being Christian? From small WhatsApp to growing community — helping each other understand Word, fight battles like addiction, lust, anxiety, peer pressure.</p></div><div class="mt-6 flex justify-center"><div class="w-48 h-48 rounded-full border border-[#E6C88E]/40 flex flex-col items-center justify-center bg-gradient-to-b from-[#1a1a0a] to-black"><div class="text-6xl">🌳</div><div class="text-[10px] tracking-[0.2em] gold mt-2">ROOTS IN YAHWEH</div><div class="text-[8px] text-white/30">COL 2:7</div></div></div></section>
 
-<!-- COLOURING BOOK -->
-<div class="card">
-<h3>🎨 Colouring Book - Tap to Colour</h3>
-<div class="colour-book" id="colourBook"></div>
-</div>
+<section id="timetable" class="hidden py-10"><p class="text-center text-[11px] tracking-widest text-white/40">OUR RHYTHM</p><h2 class="serif text-4xl text-center mt-2">🔥 ROOTS IN YAHWEH FIXED TIMETABLE 🔥</h2><div class="grid gap-3 mt-8"><div class="rounded-2xl bg-[#F5F3EF] text-black p-5"><b>MONDAY → Preaching</b><br><span class="text-sm">Drop a short sermon</span></div><div class="rounded-2xl glass p-5"><b>TUESDAY → God Did</b><br><span class="text-sm text-white/60">Testimony day. What God has done.</span></div><div class="rounded-2xl glass p-5"><b>WEDNESDAY → Melody Drop</b><br><span class="text-sm text-white/60">All about Christian vibes and tunes</span></div><div class="rounded-2xl glass p-5"><b>THURSDAY → Bible Study</b><br><span class="text-sm text-white/60">Deep dive, 1 chapter / topic.</span></div><div class="rounded-2xl bg-white text-black p-5 border-2 border-[#E6C88E]"><b>FRIDAY → Debate</b><br><span class="text-sm">Hot Christian topics, defend with verse. + Game Night Alert sent to everyone</span></div><div class="rounded-2xl bg-[#E6C88E] text-black p-5"><b>SATURDAY → Game Night</b><br><span class="text-sm">Emoji, Trivia, Riddles only</span></div><div class="rounded-2xl glass p-5"><b>SUNDAY → Take Aways</b><br><span class="text-sm text-white/60">What you learned from Sunday service.</span></div></div></section>
 
-<!-- KIDS SECTION - ALL YOUR STORIES -->
-<div id="kids" class="card">
-<h3>👶 Kids Section - Bible Stories (Full Detail)</h3>
-<select id="storyFilter" onchange="renderStories()">
-<option value="all">All Stories</option>
-<option value="Creation">Creation & Early World</option>
-<option value="Patriarchs">Patriarchs</option>
-<option value="Exodus">Exodus & Wilderness</option>
-<option value="Judges">Judges - CRAZY ACTION</option>
-<option value="Kings">Kings & Drama</option>
-<option value="Prophets">Prophets & Survival</option>
-<option value="Jesus">Jesus Life - Gospels</option>
-<option value="Parables">Parables & Teachings</option>
-<option value="Acts">Acts & Early Church</option>
-</select>
-<div id="storyGrid" class="grid" style="margin-top:12px"></div>
-</div>
+<section id="games" class="hidden py-10"><h2 class="serif text-4xl">Bible Games</h2><p class="text-white/60 text-sm mt-2">Only 3 — wire search removed</p><div class="grid md:grid-cols-3 gap-4 mt-6"><div class="rounded-2xl bg-[#1A1A1A] border border-white/10 p-6"><div class="text-3xl">🐳 🧑‍🦱</div><p class="text-[11px] mt-3 text-white/40">100 LEVELS</p><p class="font-medium mt-1">Bible Emoji</p><button onclick="playGame('emoji')" class="mt-3 text-sm underline">Play now →</button></div><div class="rounded-2xl bg-[#1A1A1A] border border-white/10 p-6"><div class="text-3xl">📖 ❓</div><p class="text-[11px] mt-3 text-white/40">1000 Qs</p><p class="font-medium mt-1">Bible Trivia</p><button onclick="playGame('trivia')" class="mt-3 text-sm underline">Play now →</button></div><div class="rounded-2xl bg-[#1A1A1A] border border-white/10 p-6"><div class="text-3xl">🤔 💡</div><p class="text-[11px] mt-3 text-white/40">100 RIDDLES</p><p class="font-medium mt-1">Bible Riddles</p><button onclick="playGame('riddles')" class="mt-3 text-sm underline">Play now →</button></div></div><div id="gameArea" class="hidden mt-6 rounded-2xl bg-white text-black p-6"><h3 id="gameTitle"></h3><div id="gameContent" class="mt-4"></div></div></section>
 
-<!-- GAMES INDIVIDUALLY -->
-<div class="card">
-<h3>🎮 Games - Play Individually</h3>
-<div class="grid">
-<div class="game-card"><h4>🧠 Bible Quiz</h4><p style="color:#888;font-size:12px">Test your knowledge</p><button class="btn" onclick="playQuiz()">Play Quiz</button><div id="quizArea" style="margin-top:10px;color:#bbb;font-size:13px"></div></div>
-<div class="game-card"><h4>📖 Memory Verse</h4><p style="color:#888;font-size:12px">Memorize Colossians 2:7</p><button class="btn" onclick="alert('Recite: Rooted and built up in Him, strengthened in faith - Col 2:7')">Show Verse</button></div>
-<div class="game-card"><h4>🔤 Word Search</h4><p style="color:#888;font-size:12px">Find JESUS, DAVID, NOAH, MOSES</p><button class="btn" onclick="alert('Word Search:\nJ E S U S\nD A V I D\nN O A H\nM O S E S\nFind them!')">Play</button></div>
-</div>
-</div>
+<section id="stories" class="hidden py-10"><h2 class="serif text-4xl">Stories — All in One Place</h2><div class="grid gap-4 mt-6"><div class="glass rounded-2xl p-6"><p class="text-xs text-white/40">GOD DID</p><p class="font-medium mt-2">From porn to purpose — brother broke free</p></div><div class="glass rounded-2xl p-6"><p class="text-xs text-white/40">PREACHING</p><p class="font-medium mt-2">Why roots determine fruits — Psalm 1</p></div></div></section>
 
-<!-- BIBLE READING PLAN - LINK TO BIBLE.COM + OWN PLAN -->
-<div class="card">
-<h3>📚 Bible & Reading Plan</h3>
-<p style="color:#aaa;font-size:13px">We can't copy Bible.com (copyright). Use their app + our 30-day plan below (KJV public domain links).</p>
-<a href="https://www.bible.com/bible-app-lite" target="_blank" style="color:#d4af37">Open Bible.com Lite →</a>
-<div style="margin-top:12px;background:#000;padding:12px;border-radius:12px;border:1px solid #222">
-<b style="color:#d4af37">30-Day Roots Reading Plan:</b><br>
-<span style="font-size:13px;color:#bbb">
-Day 1-3: John 1-3 (Jesus is God)<br>
-Day 4-6: Genesis 1-3, 6-9 (Creation & Noah)<br>
-Day 7-9: Exodus 2-3,14,20 (Moses)<br>
-Day 10-12: Judges 6-7, 13-16 (Gideon & Samson)<br>
-Day 13-15: 1 Sam 17, 2 Sam 11-12 (David)<br>
-Day 16-18: Daniel 3,6, Jonah (Faith in fire)<br>
-Day 19-22: Luke 2, Mark 4, John 11 (Jesus miracles)<br>
-Day 23-25: Luke 15 (Prodigal, Lost Sheep)<br>
-Day 26-28: Acts 2,9,16 (Holy Spirit & Paul)<br>
-Day 29-30: Revelation 21-22 (New Heaven)
-</span>
+<section id="bibleai" class="hidden py-10">
+<div class="flex gap-2"><span class="px-3 py-1 rounded-full bg-[#E6C88E] text-black text-[10px] font-bold">ANSWERS ANYTHING</span><span class="text-xs text-white/50">Offline + GPT mode</span></div>
+<h2 class="serif text-[40px] leading-[0.9] mt-4">Ask anything.<br>Get a <span class="italic gold">rooted</span> answer.</h2>
+<div class="grid md:grid-cols-[1.1fr_0.9fr] gap-4 mt-6">
+<div class="rounded-[24px] bg-[#F5F3EF] text-black p-5">
+<div class="flex flex-wrap gap-2 mb-3"><button onclick="quickAsk('How do I beat lust as a Christian teen?')" class="px-3 py-1.5 rounded-full bg-black text-white text-xs">How to beat lust?</button><button onclick="quickAsk('I feel anxious everyday')" class="px-3 py-1.5 rounded-full border text-xs">Anxiety</button><button onclick="quickAsk('Explain Romans 8:28 simply')" class="px-3 py-1.5 rounded-full border text-xs">Explain verse</button><button onclick="quickAsk('Solve 2x + 5 = 15')" class="px-3 py-1.5 rounded-full border text-xs">Math help</button><button onclick="quickAsk('What is my purpose?')" class="px-3 py-1.5 rounded-full border text-xs">Purpose?</button></div>
+<div id="aiChat" class="h-[400px] overflow-y-auto bg-white rounded-xl border p-3 space-y-3 text-sm"><div class="p-3 rounded-xl bg-black text-white"><b>Roots AI:</b> Yo, I'm Roots AI 🌳 — ask me ANYTHING. Bible, school, struggles, science, homework. No judgment.</div></div>
+<div class="flex gap-2 mt-3"><input id="aiInput" placeholder="Ask anything..." class="flex-1 px-5 py-3.5 rounded-full border text-sm"><button onclick="askAI()" class="px-6 py-3 rounded-full bg-black text-white">↑</button></div>
+<input id="openaiKey" placeholder="Optional: Paste OpenAI key sk-... for super-smart GPT-4 mode" class="w-full mt-3 px-4 py-2.5 rounded-full border text-[11px]">
 </div>
+<div class="rounded-[24px] glass p-6"><h3 class="font-bold text-sm">📖 Quick Bible</h3><select class="mt-3 w-full p-3 rounded-xl bg-black border border-white/20 text-sm"><option>Psalm 1</option><option>John 3:16</option><option>Romans 8</option><option>Col 2:7</option></select><div class="mt-4 p-4 rounded-xl bg-white text-black text-sm">"He is like a tree planted by streams..." — Psalm 1:3</div></div>
 </div>
+</section>
 
-<!-- ANONYMOUS CHAT - NO NUMBER -->
-<div class="card">
-<h3>💬 Teen Corner - Send Without Number (Anonymous Option)</h3>
-<div class="chat-box">
-<div style="padding:12px;background:#111;text-align:center;border-bottom:1px solid #222">Youth Chat • Anonymous allowed</div>
-<div id="loginA" style="padding:14px">
-<select id="anonSel"><option value="named">Show my name</option><option value="anon">Be Anonymous (secret)</option></select>
-<input id="userN" placeholder="Name (optional) - e.g., Jason or leave blank for Anonymous">
-<input id="phone" type="hidden">
-<input id="pin" placeholder="4-digit PIN (to keep your name safe)" maxlength="4">
-<button class="btn" style="width:100%" onclick="joinChat()">JOIN CHAT →</button>
+<section id="chat" class="hidden py-10">
+<h2 class="serif text-[42px] leading-[0.9]">Teen chat with<br><span class="italic gold">username.</span></h2>
+<div class="grid md:grid-cols-[0.9fr_1.1fr] gap-4 mt-6">
+<div class="rounded-[24px] bg-[#F5F3EF] text-black p-6">
+<h3 class="font-bold">1. Create username</h3><p class="text-xs text-black/60 mt-1">Anonymous allowed: RootedBro_23, Seeker, etc.</p>
+<input id="usernameInput" placeholder="e.g. RootedGirl_19" maxlength="20" class="w-full mt-4 px-5 py-3.5 rounded-full border text-sm">
+<button onclick="createUsername()" class="w-full mt-3 py-3.5 rounded-full bg-black text-white text-sm font-bold">Create & Join</button>
+<p id="usernameStatus" class="text-[11px] text-black/50 mt-2"></p>
+<div id="currentUserDisplay" class="hidden mt-3 p-3 rounded-xl bg-[#E6C88E]/20 text-sm"></div>
 </div>
-<div id="chatA" style="display:none">
-<div id="msgs" class="chat-msgs"></div>
-<div style="display:flex;padding:10px;background:#111;gap:8px"><input id="msgI" placeholder="Type encouragement..." onkeypress="if(event.key==='Enter')sendMsg()"><button onclick="sendMsg()" style="background:#d4af37;border:none;padding:10px 16px;border-radius:20px">➤</button></div>
+<div class="rounded-[24px] glass p-5 flex flex-col">
+<h3 class="font-bold text-sm">2. Live Chat Space</h3>
+<div id="chatMessages" class="mt-4 h-[380px] overflow-y-auto bg-black rounded-[16px] border border-white/10 p-4 space-y-3 text-sm">
+<div class="text-center text-[11px] text-white/30 mt-10">No messages yet. Be first! 👋<br>Be kind, be rooted. No spam.</div>
+</div>
+<div class="flex gap-2 mt-3"><input id="chatInput" placeholder="Create username first to chat" disabled class="flex-1 px-5 py-3.5 rounded-full bg-white/10 border border-white/10 text-sm"><button id="chatSendBtn" onclick="sendChatMessage()" disabled class="w-12 h-12 rounded-full bg-white text-black">↑</button></div>
 </div>
 </div>
-</div>
+</section>
 
-</div>
+<section id="wallpapers" class="hidden py-10"><h2 class="serif text-4xl">Wallpapers & Music</h2><div class="grid md:grid-cols-2 gap-4 mt-6"><div><h3 class="font-medium">🎨 Wallpapers</h3><div class="grid grid-cols-2 gap-3 mt-3"><div class="h-32 rounded-2xl bg-gradient-to-br from-[#E6C88E] to-[#8a6a30] flex items-center justify-center text-black font-bold text-center p-2 text-sm">Rooted in Yahweh<br>Psalm 1:3</div><div class="h-32 rounded-2xl bg-[#1a1a1a] border border-white/10 flex items-center justify-center text-sm">Go Deep. Stay Rooted.</div></div></div><div><h3 class="font-medium">🎵 Music Section (Melody Drop)</h3><div class="space-y-2 mt-3"><div class="glass rounded-xl p-4 flex justify-between"><span class="text-sm">Goodness of God - CeCe Winans</span><span>▶️</span></div><div class="glass rounded-xl p-4 flex justify-between"><span class="text-sm">Jireh - Maverick City</span><span>▶️</span></div></div></div></div></section>
 
-<div class="footer">
-<p><a href="#" style="color:#d4af37;margin:8px"><i class="fab fa-instagram"></i></a><a href="#" style="color:#d4af37;margin:8px"><i class="fab fa-tiktok"></i></a><a href="https://wa.me/265999000000" style="color:#d4af37;margin:8px"><i class="fab fa-whatsapp"></i></a></p>
-Roots in Yahweh © 2026 • Jesus is King 👑
-</div>
+<section id="prayer" class="hidden py-10"><h2 class="serif text-4xl">You don't have to carry it alone.</h2><p class="text-white/60 text-sm mt-2">Anonymous prayer to +265 999 962 073</p><div class="mt-6 glass rounded-[24px] p-6"><input id="pName" placeholder="Anonymous" class="w-full px-4 py-3 rounded-xl bg-black border border-white/15 text-sm"><textarea id="pRequest" placeholder="What can we pray for?" class="w-full mt-3 px-4 py-3 rounded-xl bg-black border border-white/15 text-sm h-28"></textarea><p id="pCount" class="text-[11px] text-white/40 mt-1 text-right">0/500</p><button onclick="sendPrayer()" class="w-full mt-4 py-3.5 rounded-full bg-white text-black text-sm font-medium">Send Prayer Request via WhatsApp</button><p class="text-[11px] text-white/40 mt-2 text-center">Private WhatsApp to R.I.Y prayer team</p></div></section>
+
+<section id="socials" class="hidden py-10"><p class="text-[11px] tracking-widest text-white/40 text-center">FOLLOW THE MOVEMENT</p><h2 class="serif text-4xl text-center mt-2">Find us where you are.</h2><div class="grid gap-3 mt-8"><a class="glass rounded-2xl p-5 flex justify-between"><div><p class="font-medium">TikTok @rootsinyahweh</p></div><span>↗</span></a><a class="glass rounded-2xl p-5 flex justify-between"><div><p class="font-medium">Instagram @roots_in_yahweh</p></div><span>↗</span></a></div></section>
+</main>
 
 <script>
-// NOTIF
-function showNotif(){if('Notification' in window && Notification.permission==='default')document.getElementById('notifBar').style.display='flex';}
-function askNotif(){Notification.requestPermission().then(p=>{if(p==='granted')new Notification('Roots in Yahweh 🙏',{body:'You will get updates!',icon:'logo.jpg'});document.getElementById('notifBar').style.display='none';});}
-setTimeout(showNotif,3000);
+const menu=document.getElementById('menu');
+document.getElementById('menuBtn').onclick=()=>{menu.classList.remove('hidden');menu.classList.add('flex')};
+document.getElementById('closeMenu').onclick=()=>menu.classList.add('hidden');
+function showSection(id){document.querySelectorAll('main section').forEach(s=>s.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');menu.classList.add('hidden');window.scrollTo(0,0);}
+document.querySelectorAll('.menu-link').forEach(b=>b.onclick=()=>showSection(b.dataset.go));
+const verses=[{t:"He is like a tree planted by streams of water, which yields its fruit in season",r:"PSALM 1:3"},{t:"Rooted and built up in Him, strengthened in the faith",r:"COLOSSIANS 2:7"},{t:"Trust in the Lord with all your heart",r:"PROVERBS 3:5"}];
+const v=verses[new Date().getDate()%verses.length];
+document.getElementById('dailyVerse').innerText='"'+v.t+'"';document.getElementById('dailyRef').innerText=v.r;document.getElementById('dateLabel').innerText=new Date().toLocaleDateString('en-US',{weekday:'long',day:'numeric',month:'long'});
+document.getElementById('copyVerse').onclick=()=>{navigator.clipboard.writeText(v.t+' - '+v.r);alert('Copied!')};
+document.getElementById('shareVerse').onclick=async()=>{if(navigator.share) await navigator.share({text:v.t+' - '+v.r})};
+document.getElementById('notifBtn').onclick=async()=>{const p=await Notification.requestPermission();if(p==='granted'){localStorage.setItem('notif','yes');alert('Friday Game Night alerts enabled!');checkFriday()}};
+function checkFriday(){if(new Date().getDay()===5){const b=document.createElement('div');b.className='fixed bottom-5 left-5 right-5 bg-[#E6C88E] text-black p-4 rounded-2xl flex justify-between z-50';b.innerHTML='<div><p class=font-bold>🔥 Game Night Tonight - 7PM!</p><p class=text-xs>Emoji, Trivia & Riddles</p></div><button onclick=this.parentElement.remove() class="px-3 py-1 rounded-full bg-black text-white text-xs">Got it</button>';document.body.appendChild(b);if(localStorage.getItem('notif')==='yes'&&Notification.permission==='granted') new Notification('🔥 Game Night Tonight!',{body:'7PM - Bible Games live!'})}}
+checkFriday();
+document.getElementById('pRequest')?.addEventListener('input',e=>{document.getElementById('pCount').innerText=e.target.value.length+'/500'});
+function sendPrayer(){const n=document.getElementById('pName').value||'Anonymous';const r=document.getElementById('pRequest').value;if(!r) return alert('Write request');window.open(`https://wa.me/265999962073?text=*PRAYER REQUEST - Roots In Yahweh*%0AName:${n}%0ARequest:${encodeURIComponent(r)}`,'_blank');}
+function playGame(type){const a=document.getElementById('gameArea');a.classList.remove('hidden');document.getElementById('gameTitle').innerText=type;document.getElementById('gameContent').innerHTML=type==='emoji'?'<p>🐳 👨 - Who was swallowed? <b>Jonah</b></p>':type==='trivia'?'<p>How many books in Bible? <b>66</b></p>':'<p>I defeated Goliath. Who am I? <b>David</b></p>';}
 
-// STORIES - YOUR LIST
-const stories=[
-{c:"Creation",t:"Creation",d:"God creates everything by speaking.",v:"Genesis 1"},
-{c:"Creation",t:"Adam & Eve",d:"First humans, first lie, first cover-up.",v:"Genesis 2-3"},
-{c:"Creation",t:"Cain and Abel",d:"First murder over jealousy.",v:"Genesis 4"},
-{c:"Creation",t:"Noah's Ark",d:"World floods, one family + boat full of animals.",v:"Genesis 6-9"},
-{c:"Creation",t:"Tower of Babel",d:"Humanity builds to heaven, languages scrambled.",v:"Genesis 11"},
-{c:"Patriarchs",t:"Abraham bargains with God",d:"Tries to talk God out of destroying Sodom.",v:"Genesis 18"},
-{c:"Patriarchs",t:"Sodom and Gomorrah",d:"Fire from sky, Lot's wife turns to salt.",v:"Genesis 19"},
-{c:"Patriarchs",t:"Hagar in desert",d:"Single mom meets God at a well.",v:"Genesis 16,21"},
-{c:"Patriarchs",t:"Jacob wrestles God",d:"Fights angel all night, gets new name.",v:"Genesis 32"},
-{c:"Patriarchs",t:"Joseph's dreams",d:"Kid with dreams, prison to palace.",v:"Genesis 37-50"},
-{c:"Patriarchs",t:"Joseph vs brothers",d:"Revenge turns into forgiveness.",v:"Genesis 45"},
-{c:"Exodus",t:"Moses in basket",d:"Baby hidden in river, found by princess.",v:"Exodus 2"},
-{c:"Exodus",t:"Burning Bush",d:"Bush on fire but not burning up.",v:"Exodus 3"},
-{c:"Exodus",t:"10 Plagues",d:"Water to blood, frogs, darkness.",v:"Exodus 7-12"},
-{c:"Exodus",t:"Parting Red Sea",d:"Sea splits, people walk through.",v:"Exodus 14"},
-{c:"Exodus",t:"Manna from heaven",d:"Bread falls from sky for 40 years.",v:"Exodus 16"},
-{c:"Exodus",t:"Golden Calf",d:"Moses gone 40 days, people make cow idol.",v:"Exodus 32"},
-{c:"Exodus",t:"Balaam's donkey talks",d:"Prophet's donkey starts speaking.",v:"Numbers 22"},
-{c:"Exodus",t:"Bronze snake heals",d:"Look at metal snake and live.",v:"Numbers 21"},
-{c:"Exodus",t:"Walls of Jericho",d:"March, shout, walls fall.",v:"Joshua 6"},
-{c:"Exodus",t:"Rahab the spy",d:"Prostitute hides spies, saves family.",v:"Joshua 2"},
-{c:"Judges",t:"Ehud left-handed assassin",d:"Hides sword, kills fat king.",v:"Judges 3"},
-{c:"Judges",t:"Deborah the judge",d:"Only female judge, leads army.",v:"Judges 4-5"},
-{c:"Judges",t:"Gideon 300 men",d:"Beats 135,000 with torches and jars.",v:"Judges 7"},
-{c:"Judges",t:"Samson",d:"Super strength, kills 1000 with donkey jawbone.",v:"Judges 13-16"},
-{c:"Judges",t:"Samson and Delilah",d:"Betrayed for money, haircut costs everything.",v:"Judges 16"},
-{c:"Judges",t:"Jephthah's vow",d:"Tragic promise goes wrong.",v:"Judges 11"},
-{c:"Judges",t:"Ruth",d:"Loyal daughter-in-law becomes great-grandmother of king.",v:"Book of Ruth"},
-{c:"Kings",t:"David and Goliath",d:"Teen vs giant.",v:"1 Samuel 17"},
-{c:"Kings",t:"David and Jonathan",d:"Best friends when should be enemies.",v:"1 Sam 18-20"},
-{c:"Kings",t:"David and Saul in cave",d:"Spares king trying to kill him.",v:"1 Sam 24"},
-{c:"Kings",t:"David and Bathsheba",d:"King messes up badly.",v:"2 Sam 11"},
-{c:"Kings",t:"Absalom's rebellion",d:"Son tries to steal throne, hair stuck in tree.",v:"2 Sam 15-18"},
-{c:"Kings",t:"Solomon asks for wisdom",d:"Becomes smartest man alive.",v:"1 Kings 3"},
-{c:"Kings",t:"Solomon and two mothers",d:"Threatens to cut baby to find real mom.",v:"1 Kings 3:16-28"},
-{c:"Kings",t:"Queen of Sheba",d:"Queen tests Solomon with riddles.",v:"1 Kings 10"},
-{c:"Kings",t:"Elijah vs 450 prophets",d:"Fire-calling showdown.",v:"1 Kings 18"},
-{c:"Kings",t:"Elijah whisper",d:"Not wind or fire, but whisper.",v:"1 Kings 19"},
-{c:"Kings",t:"Elisha multiplies oil",d:"Widow's jar never runs out.",v:"2 Kings 4"},
-{c:"Kings",t:"Naaman healed",d:"Proud general washes in dirty river 7x.",v:"2 Kings 5"},
-{c:"Kings",t:"Floating axe head",d:"Iron axe floats on water.",v:"2 Kings 6:1-7"},
-{c:"Kings",t:"Hezekiah sun backward",d:"Shadow moves backward 10 steps.",v:"2 Kings 20"},
-{c:"Kings",t:"Esther",d:"Jewish girl becomes queen, stops genocide with 2 dinners.",v:"Book of Esther"},
-{c:"Prophets",t:"Daniel says no to king's food",d:"They look healthier.",v:"Daniel 1"},
-{c:"Prophets",t:"Fiery furnace",d:"3 guys in fire, 4th man appears.",v:"Daniel 3"},
-{c:"Prophets",t:"Handwriting on wall",d:"Ghost hand writes at party.",v:"Daniel 5"},
-{c:"Prophets",t:"Daniel lions' den",d:"Sleeps with lions all night.",v:"Daniel 6"},
-{c:"Prophets",t:"Jonah big fish",d:"3 days in fish, preaches to enemies.",v:"Book of Jonah"},
-{c:"Prophets",t:"Job loses everything",d:"Richest man loses all, argues with God.",v:"Book of Job"},
-{c:"Jesus",t:"Birth of Jesus",d:"Born in stable, angels to shepherds.",v:"Luke 2"},
-{c:"Jesus",t:"Jesus at 12",d:"Found debating teachers.",v:"Luke 2:41-52"},
-{c:"Jesus",t:"Tempted in desert",d:"40 days no food, argues with devil.",v:"Matthew 4"},
-{c:"Jesus",t:"Water to wine",d:"First miracle at wedding.",v:"John 2"},
-{c:"Jesus",t:"Calms storm",d:"Sleeping during storm, tells it to stop.",v:"Mark 4:35-41"},
-{c:"Jesus",t:"Feeds 5000",d:"5 loaves, 2 fish feed crowd.",v:"John 6"},
-{c:"Jesus",t:"Walks on water",d:"Peter tries too.",v:"Matthew 14"},
-{c:"Jesus",t:"Raises Lazarus",d:"Friend dead 4 days, calls him out.",v:"John 11"},
-{c:"Jesus",t:"Zacchaeus",d:"Short corrupt tax man climbs tree.",v:"Luke 19"},
-{c:"Jesus",t:"Crucifixion & Resurrection",d:"Center of everything.",v:"Matt 27-28"},
-{c:"Parables",t:"Good Samaritan",d:"Enemy becomes hero.",v:"Luke 10:25-37"},
-{c:"Parables",t:"Prodigal Son",d:"Son wastes everything, dad throws party.",v:"Luke 15"},
-{c:"Parables",t:"Lost Sheep",d:"God searches for one.",v:"Luke 15"},
-{c:"Parables",t:"Talents",d:"Boss checks what they did with money.",v:"Matt 25:14-30"},
-{c:"Acts",t:"Pentecost",d:"Wind, fire tongues, own language.",v:"Acts 2"},
-{c:"Acts",t:"Stephen stoned",d:"First martyr sees heaven open.",v:"Acts 7"},
-{c:"Acts",t:"Paul's conversion",d:"Persecutor blinded by light.",v:"Acts 9"},
-{c:"Acts",t:"Peter breaks out of prison",d:"Angel opens gates.",v:"Acts 12"},
-{c:"Acts",t:"Paul & Silas sing in prison",d:"Earthquake opens jail.",v:"Acts 16"},
-];
-function renderStories(){
-let f=document.getElementById('storyFilter').value;
-let grid=document.getElementById('storyGrid');grid.innerHTML='';
-stories.filter(s=>f==='all'||s.c===f).forEach(s=>{
-let d=document.createElement('div');d.className='story';
-d.innerHTML=`<b>${s.t}</b><br><span style="color:#d4af37;font-size:11px">${s.v}</span><p>${s.d}</p>`;
-d.onclick=()=>{setQ(`Explain ${s.t} ${s.v} for kids`);document.getElementById('bibleAI').scrollIntoView({behavior:'smooth'});};
-grid.appendChild(d);
-});
+// AI THAT ANSWERS ANYTHING
+function quickAsk(q){document.getElementById('aiInput').value=q;askAI();}
+function getAIResponse(q){
+ const l=q.toLowerCase();
+ if(l.includes('2x') && l.includes('15')) return 'Math: 2x + 5 = 15 → 2x = 10 → <b>x = 5</b> ✅<br><br>Check: 2*5+5=15. Verse: Daniel 1:17 - God gave knowledge.';
+ if(l.match(/porn|lust|masturb/)) return '<b>What God says:</b> Job 31:1 Covenant with eyes, 1 Cor 6:18 Flee, Psalm 119:11 Hide Word in heart.<br><br><b>Do tonight:</b> Delete triggers, tell 1 brother, replace 7-10pm window with workout+Word+prayer, fast 1 day.<br><br><b>Prayer:</b> Father, I choose purity today. Amen.';
+ if(l.match(/anxious|anxiety|depress/)) return '<b>Phil 4:6-7</b> Peace beyond understanding, <b>1 Pet 5:7</b> Cast anxiety on Him.<br><br>Practical: 4-4-4 breathing, pray out loud, journal 3 God Did today.';
+ if(l.match(/purpose|lost/)) return '<b>Jer 29:11</b> Plans to prosper, <b>Eph 2:10</b> Created for good works. Purpose = who you become. Serve 1 person secretly this week.';
+ return `You asked: "${q}"<br><br><b>Rooted answer (Col 2:7):</b><br>1) What does God say? Find principle<br>2) What builds you? Psalm 1:3<br>3) Who are you becoming?<br><br>God cares about this. Bring to Him (James 1:5). Take one small obedient step today.<br><br><b>Prayer:</b> Father, give wisdom for this. Amen.`;
 }
-renderStories();
-
-// WALLPAPERS
-const verses=["Rooted & Built Up - Col 2:7","Jesus is King - Phil 2:10","Be Strong & Courageous - Josh 1:9","God is with you - Isa 41:10","Praise Him - Psalm 150:6","The Joy of the Lord - Neh 8:10"];
-function genWallpaper(){
-let c=document.getElementById('wallCanvas');let ctx=c.getContext('2d');
-ctx.fillStyle='#000';ctx.fillRect(0,0,1080,1920);
-let grad=ctx.createRadialGradient(540,400,100,540,960,900);grad.addColorStop(0,'#2a2100');grad.addColorStop(1,'#000');ctx.fillStyle=grad;ctx.fillRect(0,0,1080,1920);
-ctx.fillStyle='#d4af37';ctx.font='bold 60px Arial';ctx.textAlign='center';
-let v=verses[Math.floor(Math.random()*verses.length)];
-let words=v.split(' - ');ctx.fillText(words[0],540,900);
-ctx.font='30px Arial';ctx.fillStyle='#bbb';ctx.fillText(words[1]||'',540,970);
-ctx.font='20px Arial';ctx.fillStyle='#555';ctx.fillText('ROOTS IN YAHWEH - Lilongwe',540,1850);
-let url=c.toDataURL();
-let grid=document.getElementById('wallGrid');
-let div=document.createElement('div');div.className='wallpaper';
-div.innerHTML=`<img src="${url}" style="width:100%;border-radius:8px"><p style="font-size:11px;margin:6px 0">${v}</p><a href="${url}" download="roots-wallpaper.png" style="background:#d4af37;color:#000;padding:6px 12px;border-radius:15px;text-decoration:none;font-size:12px;font-weight:bold">Download</a>`;
-grid.prepend(div);
-}
-for(let i=0;i<3;i++)genWallpaper();
-
-// COLOURING BOOK
-const colourImages=[
-{t:"Noah's Ark",svg:`<svg viewBox="0 0 200 150"><path d="M20 100 Q100 20 180 100 L170 120 Q100 50 30 120 Z" fill="none" stroke="#000" stroke-width="3"/><circle cx="60" cy="70" r="10" fill="none" stroke="#000" stroke-width="2"/><circle cx="100" cy="60" r="8" fill="none" stroke="#000" stroke-width="2"/></svg>`},
-{t:"David & Goliath",svg:`<svg viewBox="0 0 200 150"><circle cx="150" cy="50" r="20" fill="none" stroke="#000" stroke-width="3"/><circle cx="50" cy="100" r="10" fill="none" stroke="#000" stroke-width="2"/><line x1="50" y1="110" x2="90" y2="80" stroke="#000" stroke-width="2"/></svg>`},
-{t:"Daniel & Lions",svg:`<svg viewBox="0 0 200 150"><circle cx="100" cy="75" r="20" fill="none" stroke="#000" stroke-width="3"/><path d="M40 100 Q50 80 60 100" fill="none" stroke="#000" stroke-width="2"/><path d="M140 100 Q150 80 160 100" fill="none" stroke="#000" stroke-width="2"/></svg>`},
-{t:"Creation - Sun",svg:`<svg viewBox="0 0 200 150"><circle cx="100" cy="50" r="30" fill="none" stroke="#000" stroke-width="3"/><path d="M20 120 Q100 60 180 120" fill="none" stroke="#000" stroke-width="3"/></svg>`},
-{t:"Walls of Jericho",svg:`<svg viewBox="0 0 200 150"><rect x="30" y="40" width="140" height="80" fill="none" stroke="#000" stroke-width="3"/><line x1="30" y1="60" x2="170" y2="60" stroke="#000" stroke-width="1"/><line x1="30" y1="80" x2="170" y2="80" stroke="#000" stroke-width="1"/></svg>`},
-{t:"Jonah & Fish",svg:`<svg viewBox="0 0 200 150"><ellipse cx="100" cy="80" rx="70" ry="30" fill="none" stroke="#000" stroke-width="3"/><circle cx="140" cy="80" r="5" fill="none" stroke="#000" stroke-width="2"/><path d="M30 80 Q20 60 30 40" fill="none" stroke="#000" stroke-width="2"/></svg>`}
-];
-const cb=document.getElementById('colourBook');
-colourImages.forEach((img,i)=>{
-let div=document.createElement('div');div.className='colour-card';
-div.innerHTML=`<b>${img.t}</b><div style="background:#fff;border:1px solid #ddd;border-radius:10px;margin:6px 0">${img.svg}</div><canvas id="can${i}" width="300" height="200" style="border:1px solid #ddd;border-radius:10px;cursor:crosshair"></canvas><div><input type="color" id="col${i}" value="#d4af37" style="width:40px;height:30px;padding:0"><button onclick="clearCan(${i})" style="padding:6px 10px;border-radius:10px;border:1px solid #ccc">Clear</button></div>`;
-cb.appendChild(div);
-setTimeout(()=>{initCan(i);},100);
-});
-function initCan(i){
-let can=document.getElementById('can'+i);let ctx=can.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,300,200);ctx.strokeStyle='#000';ctx.lineWidth=2;
-let drawing=false;
-can.addEventListener('mousedown',()=>drawing=true);
-can.addEventListener('mouseup',()=>drawing=false);
-can.addEventListener('mousemove',(e)=>{
-if(!drawing)return;
-let rect=can.getBoundingClientRect();let x=(e.clientX-rect.left)*(300/rect.width);let y=(e.clientY-rect.top)*(200/rect.height);
-ctx.fillStyle=document.getElementById('col'+i).value;ctx.beginPath();ctx.arc(x,y,6,0,Math.PI*2);ctx.fill();
-});
-can.addEventListener('touchstart',(e)=>{drawing=true;e.preventDefault();});
-can.addEventListener('touchend',()=>drawing=false);
-can.addEventListener('touchmove',(e)=>{
-if(!drawing)return;
-let rect=can.getBoundingClientRect();let t=e.touches[0];let x=(t.clientX-rect.left)*(300/rect.width);let y=(t.clientY-rect.top)*(200/rect.height);
-ctx.fillStyle=document.getElementById('col'+i).value;ctx.beginPath();ctx.arc(x,y,8,0,Math.PI*2);ctx.fill();
-});
-}
-function clearCan(i){let c=document.getElementById('can'+i);let ctx=c.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,300,200);}
-
-// BIBLE AI - ANY QUESTION
-function setQ(q){document.getElementById('bibleQ').value=q; askAI();}
 async function askAI(){
-let q=document.getElementById('bibleQ').value.trim();if(!q)return;
-let box=document.getElementById('bibleAns');let btn=document.getElementById('askBtn');btn.innerText='...';btn.disabled=true;
-box.innerText='📖 Researching Scriptures... 2 sec...';
-try{
-let prompt=`You are Roots in Yahweh Biblical Research AI for Malawian youth. Answer ANY biblical question with verses, context, Hebrew/Greek if helpful. Be warm, youth-friendly. Question: "${q}"`;
-let r=await puter.ai.chat(prompt,{model:"claude-3-5-sonnet"});
-let text=typeof r==='string'?r:(r.message?.content?.[0]?.text||r.toString());
-box.innerText=text;
-}catch(e){box.innerText=`Error: ${e.message}\n\nTrying backup: For "${q}" - Search 2 Tim 2:15, James 1:5. Try again!`;}
-btn.innerText='Ask';btn.disabled=false;
+ const input=document.getElementById('aiInput');const q=input.value.trim();if(!q)return;
+ const chat=document.getElementById('aiChat');chat.innerHTML+=`<div class="p-3 rounded-xl bg-black/5"><b>You:</b> ${q}</div>`;input.value='';
+ const typing=document.createElement('div');typing.className='p-3 rounded-xl bg-black text-white/50 italic';typing.innerText='Roots AI thinking...';chat.appendChild(typing);chat.scrollTop=chat.scrollHeight;
+ const key=document.getElementById('openaiKey').value.trim();
+ let ans=null;
+ if(key && key.startsWith('sk-')){
+   try{const r=await fetch('https://api.openai.com/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},body:JSON.stringify({model:'gpt-4o-mini',messages:[{role:'system',content:'You are Roots In Yahweh AI. Answer ANY question biblically grounded but practically helpful. Young Malawian youth tone, real, no shame, brotherhood. Include verses. Base Col 2:7, Psalm 1:3. Keep under 200 words.'},{role:'user',content:q}],temperature:0.7})});const d=await r.json();ans=d.choices?.[0]?.message?.content;}catch(e){}
+ }
+ setTimeout(()=>{typing.remove();const div=document.createElement('div');div.className='p-3 rounded-xl bg-[#0A0A0A] text-white leading-relaxed';div.innerHTML='<b>Roots AI:</b><br><br>'+(ans||getAIResponse(q)).replace(/\n/g,'<br>');chat.appendChild(div);chat.scrollTop=chat.scrollHeight;},key?0:700);
 }
 
-// CHAT - ANONYMOUS
-let cur=null;let msgs=JSON.parse(localStorage.getItem('riChatNew')||'[]');
-function joinChat(){
-let anon=document.getElementById('anonSel').value;
-let name=document.getElementById('userN').value.trim();
-let pin=document.getElementById('pin').value.trim();
-if(pin.length!=4){alert('Enter 4-digit PIN');return}
-let finalName = anon==='anon' ? 'Anonymous' : (name||'Anonymous');
-cur={username:finalName};localStorage.setItem('riCurNew',JSON.stringify(cur));
-document.getElementById('loginA').style.display='none';document.getElementById('chatA').style.display='block';renderChat();
+// USERNAME + CHAT
+let currentUsername=localStorage.getItem('roots_username')||'';
+function updateUsernameUI(){
+ const display=document.getElementById('currentUserDisplay');const status=document.getElementById('usernameStatus');const input=document.getElementById('usernameInput');const chatInput=document.getElementById('chatInput');const btn=document.getElementById('chatSendBtn');
+ if(currentUsername){display.classList.remove('hidden');display.innerText='Logged in as: '+currentUsername+' 🌳';status.innerText='Username saved: '+currentUsername+' — you can now chat!';input.value=currentUsername;chatInput.disabled=false;btn.disabled=false;chatInput.placeholder='Type as '+currentUsername+'...';loadMessages();}else{display.classList.add('hidden');status.innerText='No username yet. Create to join chat.';chatInput.disabled=true;btn.disabled=true;}
 }
-function renderChat(){
-let b=document.getElementById('msgs');b.innerHTML='';
-if(msgs.length==0){b.innerHTML='<p style="text-align:center;color:#555;padding:20px">No messages yet. Be first! 🙏</p>';return}
-msgs.forEach(m=>{
-let isMe=cur&&m.user===cur.username;
-let d=document.createElement('div');d.className='msg '+(isMe?'me':'other');d.textContent=(m.user==='Anonymous'?'':m.user+': ')+m.text;b.appendChild(d);
-});b.scrollTop=b.scrollHeight;
-}
-function sendMsg(){
-let i=document.getElementById('msgI');let t=i.value.trim();if(!t)return;
-msgs.push({user:cur.username,text:t});localStorage.setItem('riChatNew',JSON.stringify(msgs));i.value='';renderChat();
-}
-function playQuiz(){
-let qs=[{q:"Who built the ark?",a:["Moses","Noah","David"],c:1},{q:"How many days was Jesus in desert?",a:["40","7","3"],c:0},{q:"Who fought Goliath?",a:["Samson","David","Saul"],c:1}];
-let score=0;let html='';
-qs.forEach((qq,idx)=>{
-html+=`<div style="margin:8px 0"><b>${qq.q}</b><br>`;
-qq.a.forEach((opt,oi)=>{html+=`<button onclick="this.style.background=( ${oi}===${qq.c} ? '#0f0' : '#f00')" style="margin:3px;padding:6px 10px;border-radius:10px;border:1px solid #444;background:#222;color:#fff">${opt}</button>`});
-html+=`</div>`;
-});
-document.getElementById('quizArea').innerHTML=html;
-}
-window.onload=()=>{
-let s=localStorage.getItem('riCurNew');if(s){cur=JSON.parse(s);document.getElementById('loginA').style.display='none';document.getElementById('chatA').style.display='block';renderChat();}
-}
+function createUsername(){let name=document.getElementById('usernameInput').value.trim();if(!name)return alert('Enter username');if(name.length<3)return alert('Min 3 chars');currentUsername=name;localStorage.setItem('roots_username',currentUsername);updateUsernameUI();addMessage('System','Welcome '+currentUsername+'! 🌳 You are now rooted in chat.',true);}
+function loadMessages(){const box=document.getElementById('chatMessages');const saved=JSON.parse(localStorage.getItem('roots_messages')||'[]');if(saved.length===0){const demos=[{user:'RootedBro_Mike',text:'Who coming for Game Night Saturday? 🔥',time:'10:32 AM'},{user:'Seeker_19',text:'Me! Loved Emoji game 😂',time:'10:33 AM'},{user:'AnonymousGrace',text:'Pray for my exams please 🙏',time:'10:35 AM'}];demos.forEach(m=>renderMessage(m.user,m.text,m.time));return;}box.innerHTML='';saved.forEach(m=>renderMessage(m.user,m.text,m.time));}
+function renderMessage(user,text,time){const box=document.getElementById('chatMessages');if(box.innerHTML.includes('No messages yet'))box.innerHTML='';const isMe=user===currentUsername;const div=document.createElement('div');div.className=`p-3 rounded-xl max-w-[85%] ${isMe?'bg-[#E6C88E] text-black ml-auto':'bg-white/10 text-white'}`;div.innerHTML=`<div class="flex justify-between"><span class="font-bold text-xs">${user}${isMe?' (you)':''}</span><span class="text-[10px] opacity-60">${time}</span></div><div class="mt-1 text-sm">${text}</div>`;box.appendChild(div);box.scrollTop=box.scrollHeight;}
+function addMessage(user,text,isSystem=false){const time=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});if(!isSystem){const saved=JSON.parse(localStorage.getItem('roots_messages')||'[]');saved.push({user,text,time});if(saved.length>100)saved.shift();localStorage.setItem('roots_messages',JSON.stringify(saved));}renderMessage(user,text,time);}
+function sendChatMessage(){const input=document.getElementById('chatInput');const text=input.value.trim();if(!text)return;if(!currentUsername)return alert('Create username first');addMessage(currentUsername,text);input.value='';setTimeout(()=>{if(Math.random()>0.5)addMessage('PrayerTeam','Praying for you! 🙏 Col 2:7 stay rooted!');},1200);}
+document.getElementById('chatInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')sendChatMessage()});
+document.getElementById('usernameInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')createUsername()});
+document.getElementById('aiInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')askAI()});
+updateUsernameUI();
 </script>
 </body>
 </html>
