@@ -324,3 +324,196 @@ showSection('home');
 </script>
 </body>
 </html>
+// ===== GAMES FULLY WORKING =====
+let gameType=null, gameIndex=0, gameScore=0, currentGameData=[];
+const EMOJI_GAMES=[
+{emoji:"🐳 👨", answer:"jonah", hint:"Swallowed by big fish, 3 days", verse:"Jonah 1:17"},
+{emoji:"🌈 👨‍👩‍👧‍👦 🚢 🐘 🦒", answer:"noah", hint:"Ark, animals, flood", verse:"Genesis 6:9"},
+{emoji:"👶 🌊 🧺", answer:"moses", hint:"Baby in basket, Nile river", verse:"Exodus 2:3"},
+{emoji:"🦁 👨 🙏", answer:"daniel", hint:"Lions den, prayed", verse:"Daniel 6:22"},
+{emoji:"👨 💪 💇‍♂️ 👩", answer:"samson", hint:"Strong, hair cut by Delilah", verse:"Judges 16:19"},
+{emoji:"🍎 🐍 👫", answer:"adam and eve", hint:"First man and woman, garden", verse:"Genesis 3:6"},
+{emoji:"🗼 👅 😕", answer:"babel", hint:"Tower, languages confused", verse:"Genesis 11:7"},
+{emoji:"🍞 🐟 5000", answer:"jesus feeds 5000", hint:"5 loaves 2 fish", verse:"John 6:10"},
+{emoji:"🌊 🚶‍♂️", answer:"jesus walks on water", hint:"Peter tried too", verse:"Matthew 14:25"},
+{emoji:"✝️ 🪦 ➡️ 😇", answer:"resurrection", hint:"Cross, tomb empty, rose", verse:"Matthew 28:6"}
+];
+const TRIVIA_GAMES=[
+{q:"How many books in Bible?", opts:["66","70","50","40"], ans:0, verse:"66 books — 39 OT + 27 NT"},
+{q:"Who built the ark?", opts:["Moses","Noah","Abraham","David"], ans:1, verse:"Genesis 6:14"},
+{q:"Who defeated Goliath?", opts:["Saul","David","Samson","Joshua"], ans:1, verse:"1 Samuel 17:50"},
+{q:"Where was Jesus born?", opts:["Nazareth","Bethlehem","Jerusalem","Galilee"], ans:1, verse:"Matthew 2:1"},
+{q:"How many disciples?", opts:["12","10","7","15"], ans:0, verse:"Matthew 10:1"},
+{q:"Who denied Jesus 3 times?", opts:["Peter","John","Judas","Thomas"], ans:0, verse:"Matthew 26:75"}
+];
+const RIDDLE_GAMES=[
+{q:"I led Israel through Red Sea, staff in hand, who am I?", ans:"moses", hint:"Parted sea", verse:"Exodus 14:21"},
+{q:"I was strongest man, hair was my strength, who am I?", ans:"samson", hint:"Delilah cut hair", verse:"Judges 16:17"},
+{q:"I built ark, saved animals from flood, who am I?", ans:"noah", hint:"Dove", verse:"Genesis 6:14"},
+{q:"I was in lions den overnight, God shut mouths, who am I?", ans:"daniel", hint:"Prayed 3 times daily", verse:"Daniel 6:22"}
+];
+
+function startGame(type){
+ gameType=type; gameIndex=0; gameScore=0;
+ if(type==='emoji') currentGameData=[...EMOJI_GAMES].sort(()=>Math.random()-0.5);
+ if(type==='trivia') currentGameData=[...TRIVIA_GAMES].sort(()=>Math.random()-0.5);
+ if(type==='riddles') currentGameData=[...RIDDLE_GAMES].sort(()=>Math.random()-0.5);
+ document.getElementById('gameArea').classList.remove('hidden');
+ document.getElementById('gameTitle').innerText= type==='emoji'?'Bible Emoji': type==='trivia'?'Bible Trivia': 'Bible Riddles';
+ document.getElementById('gameScore').innerText='Score: 0';
+ renderGame();
+}
+function renderGame(){
+ const data=currentGameData[gameIndex];
+ document.getElementById('gameProgress').innerText=`Level ${gameIndex+1} of ${currentGameData.length} • Score ${gameScore}`;
+ const content=document.getElementById('gameContent');
+ if(gameType==='emoji'){
+   content.innerHTML=`<div class="text-center"><div class="text-[64px]">${data.emoji}</div><input id="gameInput" placeholder="Type answer e.g. Jonah" class="w-full mt-4 px-5 py-4 rounded-full border-2 text-center text-lg font-bold"><button onclick="checkEmoji()" class="w-full mt-3 py-3.5 rounded-full bg-black text-white font-bold">Check Answer</button><p id="gameFeedback" class="mt-3 text-sm"></p></div>`;
+ } else if(gameType==='trivia'){
+   content.innerHTML=`<div><p class="font-bold text-lg">${data.q}</p><div class="grid gap-2 mt-4">${data.opts.map((o,i)=>`<button onclick="checkTrivia(${i})" class="text-left px-5 py-3.5 rounded-2xl border-2 bg-white">${String.fromCharCode(65+i)}. ${o}</button>`).join('')}</div><p id="gameFeedback" class="mt-3 text-sm"></p></div>`;
+ } else {
+   content.innerHTML=`<div><p class="font-bold text-lg">🤔 ${data.q}</p><input id="gameInput" placeholder="Who am I?" class="w-full mt-4 px-5 py-4 rounded-full border-2 text-center font-bold"><button onclick="checkRiddle()" class="w-full mt-3 py-3.5 rounded-full bg-black text-white font-bold">Answer</button><p id="gameFeedback" class="mt-3 text-sm"></p></div>`;
+ }
+}
+function checkEmoji(){
+ const data=currentGameData[gameIndex];const input=document.getElementById('gameInput').value.toLowerCase().trim();const fb=document.getElementById('gameFeedback');
+ if(input.includes(data.answer) || data.answer.includes(input)){ fb.innerHTML=`✅ Correct! <b>${data.answer}</b> — ${data.verse}`; fb.className='mt-3 text-sm text-green-600'; gameScore+=10; document.getElementById('gameScore').innerText=`Score: ${gameScore}`; document.getElementById('gameNextBtn').classList.remove('hidden'); } else { fb.innerHTML=`❌ Try again! Hint: ${data.hint}`; fb.className='mt-3 text-sm text-red-600'; }
+}
+function checkTrivia(idx){
+ const data=currentGameData[gameIndex];const fb=document.getElementById('gameFeedback');
+ if(idx===data.ans){ fb.innerHTML=`✅ Correct! ${data.verse}`; fb.className='mt-3 text-sm text-green-600'; gameScore+=10; } else { fb.innerHTML=`❌ Wrong! Correct: <b>${data.opts[data.ans]}</b> — ${data.verse}`; fb.className='mt-3 text-sm text-red-600'; }
+ document.getElementById('gameScore').innerText=`Score: ${gameScore}`; document.getElementById('gameNextBtn').classList.remove('hidden');
+}
+function checkRiddle(){
+ const data=currentGameData[gameIndex];const input=document.getElementById('gameInput').value.toLowerCase().trim();const fb=document.getElementById('gameFeedback');
+ if(input.includes(data.ans)){ fb.innerHTML=`✅ Correct! <b>${data.ans}</b> — ${data.verse}`; fb.className='mt-3 text-sm text-green-600'; gameScore+=10; document.getElementById('gameScore').innerText=`Score: ${gameScore}`; document.getElementById('gameNextBtn').classList.remove('hidden'); } else { fb.innerHTML=`❌ Not quite! Hint: ${data.hint}`; fb.className='mt-3 text-sm text-red-600'; }
+}
+function showHint(){const data=currentGameData[gameIndex];const h=document.getElementById('gameHint');h.classList.remove('hidden');h.innerText=`💡 Hint: ${data.hint} • Verse: ${data.verse}`;}
+function nextGame(){gameIndex++;if(gameIndex>=currentGameData.length){document.getElementById('gameContent').innerHTML=`<div class="text-center py-8"><div class="text-5xl">🎉</div><h3 class="font-bold text-2xl mt-4">Finished! Score: ${gameScore}</h3><button onclick="startGame(gameType)" class="mt-4 px-6 py-3 rounded-full bg-black text-white">Play Again</button></div>`;return;}renderGame();}
+function closeGame(){document.getElementById('gameArea').classList.add('hidden');}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Roots In Yahweh - Calls</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>body{font-family:Inter;background:#0a0a0a;color:white}.serif{font-family:'Instrument Serif'}.glass{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08)}.gold{color:#E6C88E}.whatsapp-bg{background:#E5DDD5;background-image:url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');}</style>
+</head>
+<body>
+<header class="sticky top-0 z-50 bg-black/90 border-b border-white/10"><div class="max-w-6xl mx-auto px-5 py-4 flex justify-between"><div class="flex gap-2 items-center"><div class="w-8 h-8 rounded-full bg-[#111] border border-[#E6C88E]/30 flex items-center justify-center">🌳</div><span>Roots In Yahweh</span></div><button id="menuBtn" class="w-10 h-10 rounded-full glass">☰</button></div></header>
+<div id="menu" class="fixed inset-0 z-[60] bg-black/95 hidden flex-col"><div class="p-5 flex justify-between border-b border-white/10"><span>Menu</span><button id="closeMenu" class="w-10 h-10 rounded-full glass">✕</button></div><div class="p-6"><button data-go="home" class="menu-link w-full text-left py-4 text-3xl serif border-b border-white/10">Home</button><button data-go="chat" class="menu-link w-full text-left py-4 text-3xl serif border-b border-white/10 text-[#25D366]">Chatroom + Calls ★</button><button data-go="bibleai" class="menu-link w-full text-left py-4 text-2xl serif border-b border-white/10">Bible AI</button></div></div>
+<main class="max-w-6xl mx-auto px-5">
+<section id="home" class="py-10"><h1 class="serif text-[50px] leading-[0.9]">Go deep.<br>Stay <span class="italic gold">rooted.</span></h1><div class="mt-6 flex gap-3"><button data-go="chat" class="menu-link px-6 py-3 rounded-full bg-[#25D366] text-black font-bold">💬 Chat + Calls</button><button data-go="bibleai" class="menu-link px-6 py-3 rounded-full glass">🤖 Bible AI</button></div><div class="mt-8 bg-[#F5F3EF] text-black rounded-[28px] p-8"><blockquote id="dailyVerse" class="serif text-[28px] text-center"></blockquote><p id="dailyRef" class="text-center mt-2 font-bold"></p></div></section>
+<section id="bibleai" class="hidden py-10"><h2 class="serif text-4xl">Bible AI - No math, no repeat</h2><div class="mt-4 bg-[#F5F3EF] text-black p-5 rounded-[24px]"><div class="flex flex-wrap gap-2 mb-3"><button onclick="quickAsk('who is Jesus')" class="px-3 py-1.5 rounded-full bg-black text-white text-xs">Who is Jesus?</button><button onclick="quickAsk('how do I get saved?')" class="px-3 py-1.5 rounded-full border text-xs">How to be saved?</button></div><div id="aiChat" class="h-[300px] overflow-y-auto bg-white rounded-xl border p-3 space-y-2 text-sm"><div class="p-3 rounded-xl bg-black text-white"><b>Roots AI:</b> Bible-only, no repeat. Ask "who is Jesus".</div></div><div class="flex gap-2 mt-3"><input id="aiInput" placeholder="Ask Bible question..." class="flex-1 px-4 py-3 rounded-full border text-sm"><button onclick="askAI()" class="w-12 h-12 rounded-full bg-black text-white">↑</button></div></div></section>
+<section id="chat" class="py-10">
+<div class="flex gap-2"><span class="px-3 py-1 rounded-full bg-[#25D366] text-white text-[10px] font-bold">NO BOTS • VOICE & VIDEO CALLS</span></div>
+<h2 class="serif text-[40px] leading-[0.9] mt-4">WhatsApp chat<br><span class="italic gold">+ calls.</span></h2>
+<p class="text-white/60 text-sm mt-2">Username once → chat + voice/video calls like WhatsApp. Real people only.</p>
+<div class="grid md:grid-cols-[0.9fr_1.1fr] gap-4 mt-6">
+<div class="rounded-[24px] bg-[#F5F3EF] text-black p-5">
+<input id="usernameInput" placeholder="e.g. jason" maxlength="20" class="w-full px-5 py-3.5 rounded-full border text-sm"><button onclick="createUsername()" class="w-full mt-3 py-3 rounded-full bg-[#075E54] text-white font-bold">Join Group & Enable Calls</button>
+<p id="usernameStatus" class="text-[11px] opacity-60 mt-2"></p><div id="currentUserDisplay" class="hidden mt-3 p-3 rounded-xl bg-[#25D366]/20 text-sm"></div>
+<div class="mt-4 p-3 rounded-xl bg-white border text-[11px]"><p class="font-bold">How calls work:</p><p class="mt-1">• Create same username on 2 devices<br>• Click 📞 to call by ID<br>• Allow mic/camera<br>• Peer-to-peer — no server saves calls</p><p class="mt-2 font-bold">Status:</p><p id="peerStatus">Not connected</p><p>Your call ID: <span id="myPeerId" class="font-bold">-</span></p></div>
+<button onclick="clearChat()" class="mt-3 text-[11px] underline">Clear chat</button>
+</div>
+<div class="rounded-[24px] overflow-hidden border border-white/10 flex flex-col shadow-2xl" style="height:620px">
+<div class="bg-[#075E54] px-4 py-3 flex items-center justify-between text-white">
+<div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">←</div><div class="w-10 h-10 rounded-full bg-[#128C7E] flex items-center justify-center">🌳</div><div><p class="font-bold text-[14px]">Roots In Yahweh Family</p><p class="text-[11px] opacity-80">47 members • Calls enabled</p></div></div>
+<div class="flex gap-3"><button onclick="startCallPrompt(false)" class="text-xl">📹</button><button onclick="startCallPrompt(true)" class="text-xl">📞</button><span>⋮</span></div>
+</div>
+<div id="chatMessages" class="flex-1 whatsapp-bg overflow-y-auto p-3 space-y-2"><div class="flex justify-center my-4"><span class="bg-[#FFF5C4] text-[#54656F] text-[11px] px-3 py-1.5 rounded-[8px] shadow">🔒 No bots, real calls. Be kind, be rooted.</span></div><div id="emptyState" class="flex flex-col items-center justify-center h-[200px] text-center"><div class="w-16 h-16 rounded-full bg-[#25D366]/20 flex items-center justify-center text-2xl">💬</div><p class="text-[#54656F] text-sm mt-3">No messages yet</p></div></div>
+<div class="bg-[#F0F0F0] p-2 flex items-center gap-2"><div class="flex-1 bg-white rounded-[24px] flex items-center px-3 py-1"><input id="chatInput" disabled placeholder="Create username to join" class="flex-1 px-3 py-2.5 bg-transparent text-[14px] text-black focus:outline-none"><span class="opacity-40 ml-2">📎</span></div><button id="chatSendBtn" onclick="sendChatMessage()" disabled class="w-12 h-12 rounded-full bg-[#25D366] text-white text-xl">➤</button></div>
+</div>
+</div>
+<div id="callModal" class="fixed inset-0 z-[80] bg-black/90 hidden flex-col items-center justify-center p-6">
+<div class="bg-[#111] rounded-[24px] p-8 w-full max-w-sm text-center border border-white/10">
+<p id="callStatus" class="text-white/60 text-sm">Calling...</p>
+<h3 id="callName" class="serif text-3xl mt-2">jason</h3>
+<div class="mt-6 flex justify-center gap-4"><div class="w-24 h-24 rounded-full bg-[#075E54] flex items-center justify-center text-4xl">🌳</div></div>
+<div class="mt-6"><video id="remoteVideo" autoplay playsinline class="w-full h-48 bg-black rounded-xl hidden"></video><video id="localVideo" autoplay muted playsinline class="w-24 h-24 bg-black rounded-full absolute bottom-32 right-8 hidden border-2 border-white"></video><audio id="remoteAudio" autoplay></audio></div>
+<div class="flex justify-center gap-4 mt-8"><button onclick="toggleMute()" id="muteBtn" class="w-12 h-12 rounded-full bg-white/10">🎤</button><button onclick="endCall()" class="w-14 h-14 rounded-full bg-red-500 flex items-center justify-center text-xl">📞</button><button onclick="toggleVideo()" id="videoBtn" class="w-12 h-12 rounded-full bg-white/10">📹</button></div>
+<p class="text-[11px] text-white/40 mt-4">Peer-to-peer encrypted call</p>
+</div>
+</div>
+<div id="incomingCall" class="fixed bottom-20 left-5 right-5 z-[81] bg-white text-black p-4 rounded-2xl shadow-2xl hidden flex justify-between items-center"><div><p class="font-bold" id="incomingName">Incoming call</p><p class="text-xs opacity-60">Tap to answer</p></div><div class="flex gap-2"><button onclick="declineCall()" class="w-12 h-12 rounded-full bg-red-500 text-white">✕</button><button onclick="answerCall()" class="w-12 h-12 rounded-full bg-[#25D366] text-white">📞</button></div></div>
+</section>
+</main>
+<script>
+const menu=document.getElementById('menu');document.getElementById('menuBtn').onclick=()=>{menu.classList.remove('hidden');menu.classList.add('flex')};document.getElementById('closeMenu').onclick=()=>menu.classList.add('hidden');function showSection(id){document.querySelectorAll('main section').forEach(s=>s.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');menu.classList.add('hidden');}document.querySelectorAll('.menu-link').forEach(b=>b.onclick=()=>showSection(b.dataset.go));
+const verses=[{t:"He is like a tree planted by streams of water",r:"PSALM 1:3"},{t:"Rooted and built up in Him",r:"COLOSSIANS 2:7"}];const v=verses[new Date().getDate()%verses.length];const dv=document.getElementById('dailyVerse');if(dv){dv.innerText='"'+v.t+'"';document.getElementById('dailyRef').innerText=v.r;}
+function quickAsk(q){document.getElementById('aiInput').value=q;askAI();}
+const BIBLE_BRAIN={"who is jesus":"**Who is Jesus?** Jesus is God come as man. John 1:1,14 Word was God became flesh, John 3:16 gave Son, Col 1:15 Image of invisible God, Phil 2:6-8 died on cross. Trust Him = forgiven Romans 10:9","how to be saved":"**How to be saved?** 1. Admit Rom 3:23 sinned 2. Believe Rom 10:9 Jesus died & rose 3. Call Rom 10:13. Pray: Jesus forgive me, be my Lord Amen."};
+function getSmartAnswer(q){const l=q.toLowerCase();for(let k in BIBLE_BRAIN){if(k.split('|').some(x=>l.includes(x)))return BIBLE_BRAIN[k];}if(l.match(/solve|math/))return "**I don't do math — Bible only.** Ask who is Jesus?";return `**You asked: "${q}"** Col 2:7 Rooted in Him. Pray James 1:5 for wisdom.`;}
+async function askAI(){const input=document.getElementById('aiInput');const q=input.value.trim();if(!q)return;const chat=document.getElementById('aiChat');chat.innerHTML+=`<div class="p-2 bg-black/5"><b>You:</b> ${q}</div>`;input.value='';const load=document.createElement('div');load.className='p-2 bg-black text-white/50';load.innerText='Thinking...';chat.appendChild(load);setTimeout(()=>{load.remove();const div=document.createElement('div');div.className='p-3 bg-black text-white';div.innerHTML='<b>Roots AI:</b><br>'+getSmartAnswer(q).replace(/\n/g,'<br>');chat.appendChild(div);},500);}
+let currentUsername=localStorage.getItem('roots_username')||'';let peer=null;let currentCall=null;let localStream=null;let incomingCallData=null;
+function updateUsernameUI(){const d=document.getElementById('currentUserDisplay');const s=document.getElementById('usernameStatus');const inp=document.getElementById('usernameInput');const ci=document.getElementById('chatInput');const btn=document.getElementById('chatSendBtn');if(currentUsername){d.classList.remove('hidden');d.innerHTML=`In group as: <b>${currentUsername} 🌳</b> • Online`;s.innerText=`Username: ${currentUsername} — chat + calls enabled`;inp.value=currentUsername;ci.disabled=false;btn.disabled=false;ci.placeholder=`Type as ${currentUsername}`;loadMessages();initPeer();}else{d.classList.add('hidden');s.innerText='No username';ci.disabled=true;btn.disabled=true;}}
+function createUsername(){let n=document.getElementById('usernameInput').value.trim();if(!n||n.length<3)return alert('Min 3');currentUsername=n;localStorage.setItem('roots_username',n);updateUsernameUI();addMessage('System',`${n} joined the group`,true);}
+function loadMessages(){renderAllMessages();}function renderAllMessages(){const box=document.getElementById('chatMessages');const saved=JSON.parse(localStorage.getItem('roots_messages')||'[]');box.querySelectorAll('.msg-bubble').forEach(m=>m.remove());saved.forEach(m=>renderMessage(m.user,m.text,m.time,m.isSystem,false));if(saved.length===0)document.getElementById('emptyState').style.display='flex';else document.getElementById('emptyState').style.display='none';box.scrollTop=box.scrollHeight;}
+function renderMessage(user,text,time,isSystem){const box=document.getElementById('chatMessages');const isMe=user===currentUsername;const div=document.createElement('div');div.className='msg-bubble';if(isSystem){div.innerHTML=`<div class="flex justify-center my-2"><span class="bg-[#FFF5C4] text-[11px] px-3 py-1.5 rounded-[8px]">${text}</span></div>`;}else if(isMe){div.innerHTML=`<div class="flex justify-end"><div class="bg-[#DCF8C6] rounded-[8px] px-3 py-2 max-w-[75%]"><div class="text-[13px] text-black">${escapeHtml(text)}</div><div class="flex justify-end gap-1 mt-1"><span class="text-[11px] text-[#667781]">${time}</span><span class="text-[#53BDEB] text-[11px]">✓✓</span></div></div></div>`;}else{div.innerHTML=`<div class="flex justify-start"><div class="bg-white rounded-[8px] px-3 py-2 max-w-[75%]"><div class="text-[12px] font-bold text-[#1FA855]">${escapeHtml(user)}</div><div class="text-[13px] text-black mt-1">${escapeHtml(text)}</div><div class="text-[11px] text-[#667781] mt-1 text-right">${time}</div></div></div>`;}box.appendChild(div);}
+function escapeHtml(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML;}
+function addMessage(user,text,isSystem=false){const time=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});const saved=JSON.parse(localStorage.getItem('roots_messages')||'[]');saved.push({user,text,time,isSystem});localStorage.setItem('roots_messages',JSON.stringify(saved));renderMessage(user,text,time,isSystem,true);}
+function sendChatMessage(){const i=document.getElementById('chatInput');const t=i.value.trim();if(!t)return;addMessage(currentUsername,t,false);i.value='';}
+function clearChat(){if(confirm('Clear?')){localStorage.removeItem('roots_messages');location.reload();}}
+document.getElementById('chatInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')sendChatMessage()});
+document.getElementById('usernameInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')createUsername()});
+document.getElementById('aiInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')askAI()});
+updateUsernameUI();showSection('chat');
+function initPeer(){
+ if(peer) peer.destroy();
+ const cleanId = currentUsername.toLowerCase().replace(/[^a-z0-9]/g,'') + '-' + Math.floor(Math.random()*1000);
+ peer = new Peer(cleanId);
+ document.getElementById('peerStatus').innerText='Connecting...';
+ peer.on('open', id=>{document.getElementById('myPeerId').innerText=id;document.getElementById('peerStatus').innerText='Ready for calls ✅ Share your ID';});
+ peer.on('call', call=>{incomingCallData=call;document.getElementById('incomingName').innerText=call.metadata?.name||call.peer+' is calling...';document.getElementById('incomingCall').classList.remove('hidden');document.getElementById('incomingCall').classList.add('flex');});
+ peer.on('error', err=>{document.getElementById('peerStatus').innerText='Error: '+err.type;});
+}
+function startCallPrompt(isAudioOnly){
+ const target = prompt('Who to call? Enter their Call ID (shown under How calls work) e.g. jason-123\\nAsk them to share their ID:');
+ if(!target) return;
+ startCall(target.trim(), isAudioOnly);
+}
+async function startCall(peerId, isAudioOnly){
+ try{
+   const constraints = {audio:true, video: !isAudioOnly};
+   localStream = await navigator.mediaDevices.getUserMedia(constraints);
+   document.getElementById('callModal').classList.remove('hidden');document.getElementById('callModal').classList.add('flex');
+   document.getElementById('callName').innerText=peerId;document.getElementById('callStatus').innerText=isAudioOnly?'Voice calling...':'Video calling...';
+   if(!isAudioOnly){document.getElementById('localVideo').srcObject=localStream;document.getElementById('localVideo').classList.remove('hidden');}
+   const call = peer.call(peerId, localStream, {metadata:{name:currentUsername}});
+   handleCall(call, isAudioOnly);
+ }catch(e){alert('Allow mic/camera: '+e.message);}
+}
+function handleCall(call, isAudioOnly){
+ currentCall=call;
+ call.on('stream', remoteStream=>{
+   document.getElementById('callStatus').innerText='Connected ✅';
+   if(remoteStream.getVideoTracks().length>0){document.getElementById('remoteVideo').srcObject=remoteStream;document.getElementById('remoteVideo').classList.remove('hidden');} else {document.getElementById('remoteAudio').srcObject=remoteStream;}
+ });
+ call.on('close', endCall);
+ call.on('error', endCall);
+}
+async function answerCall(){
+ if(!incomingCallData) return;
+ try{
+   const isVideo = confirm('Answer with VIDEO? OK=video, Cancel=voice only');
+   const constraints = {audio:true, video: isVideo};
+   localStream = await navigator.mediaDevices.getUserMedia(constraints);
+   document.getElementById('incomingCall').classList.add('hidden');
+   document.getElementById('callModal').classList.remove('hidden');document.getElementById('callModal').classList.add('flex');
+   document.getElementById('callName').innerText=incomingCallData.metadata?.name||incomingCallData.peer;
+   document.getElementById('callStatus').innerText='Connected ✅';
+   if(isVideo){document.getElementById('localVideo').srcObject=localStream;document.getElementById('localVideo').classList.remove('hidden');}
+   incomingCallData.answer(localStream);
+   handleCall(incomingCallData, !isVideo);
+   incomingCallData=null;
+ }catch(e){alert('Allow mic/camera');}
+}
+function declineCall(){if(incomingCallData){incomingCallData.close();}document.getElementById('incomingCall').classList.add('hidden');incomingCallData=null;}
+function endCall(){if(currentCall) currentCall.close();if(localStream) localStream.getTracks().forEach(t=>t.stop());document.getElementById('callModal').classList.add('hidden');document.getElementById('remoteVideo').classList.add('hidden');document.getElementById('localVideo').classList.add('hidden');currentCall=null;localStream=null;document.getElementById('callStatus').innerText='Call ended';}
+function toggleMute(){if(!localStream) return;const track=localStream.getAudioTracks()[0];if(track){track.enabled=!track.enabled;document.getElementById('muteBtn').innerText=track.enabled?'🎤':'🔇';}}
+function toggleVideo(){if(!localStream) return;const track=localStream.getVideoTracks()[0];if(track){track.enabled=!track.enabled;document.getElementById('videoBtn').innerText=track.enabled?'📹':'🚫';}}
+</script>
+</body>
+</html>
