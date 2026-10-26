@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roots In Yahweh - R.I.Y</title>
+<style>
+:root{--green:#0f3d2e;--lime:#a3e635;--cream:#fefce8}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter,system-ui}
+body{background:var(--cream);color:#1a1a1a}
+header{background:var(--green);color:white;padding:24px;text-align:center}
+header h1{font-size:32px;letter-spacing:1px}
+nav{position:sticky;top:0;z-index:10;background:white;display:flex;gap:8px;overflow:auto;padding:10px;border-bottom:1px solid #ddd}
+nav button{white-space:nowrap;padding:8px 14px;border-radius:20px;border:1px solid var(--green);background:white;cursor:pointer}
+nav button.active{background:var(--green);color:white}
+section{padding:24px;max-width:900px;margin:auto;display:none}
+section.active{display:block}
+.card{background:white;border-radius:16px;padding:16px;margin:12px 0;box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.btn{display:inline-block;background:var(--green);color:white;padding:10px 16px;border-radius:10px;text-decoration:none;margin:4px}
+.game-box{min-height:120px}
+input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ccc;margin:6px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
+.wallpaper{height:160px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;text-align:center;padding:10px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Roots In Yahweh - R.I.Y</h1>
+  <p>Helping the young generation battle addictions (sin)</p>
+  <div style="margin-top:12px">
+    <a class="btn" href="https://www.tiktok.com/@rootsinyahweh?_r=1&_t=ZS-9ABYYI3aGIc" target="_blank">TikTok</a>
+    <a class="btn" href="https://www.instagram.com/roots_in_yahweh?cplk=eWd2cjc0cW14bj" target="_blank">Instagram</a>
+    <a class="btn" href="https://chat.whatsapp.com/D485PfBGPLO5ONerm2EPY0" target="_blank">Join WhatsApp Group</a>
+  </div>
+</header>
+
+<nav id="nav"></nav>
+
+<section id="home" class="active">
+  <div class="card">
+    <h2>Welcome everyone to Roots In Yahweh</h2>
+    <p style="margin:12px 0">We started on the 14th June 2025 and since then we've been growing and helping people get to know the word and helped other people exercise leadership principles using the bible as a guide.</p>
+    <ul>
+      <li>Find your fellow christians to interact with 🤸🏽</li>
+      <li>Find guidance in everyday 🙏🏽</li>
+      <li>Find strength in Jesus 🛐</li>
+      <li>Find fun and pleasure in Christianity 😁</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Daily Song</h3>
+    <p id="dailySongText">Today: Way Maker - Sinach</p>
+    <a id="ytLink" class="btn" target="_blank" href="https://www.youtube.com/results?search_query=Way+Maker+Sinach">YouTube</a>
+    <a id="spLink" class="btn" target="_blank" href="https://open.spotify.com/search/Way%20Maker%20Sinach">Spotify</a>
+  </div>
+  <div class="card">
+    <h3>Anonymous Help & Prayer</h3>
+    <p>Text us anonymously on WhatsApp:</p>
+    <textarea id="anonMsg" placeholder="Type your prayer request..."></textarea>
+    <a class="btn" onclick="sendAnon()">Send on WhatsApp to +265 999 962 073</a>
+  </div>
+</section>
+
+<section id="timetable">
+  <h2>Event Timetable</h2>
+  <div id="tt"></div>
+</section>
+
+<section id="games">
+  <h2>Game Zone - 100 Levels Each</h2>
+  <div class="card">
+    <select id="gameSelect" onchange="loadGame()">
+      <option value="emoji">Emoji Game</option>
+      <option value="trivia">Bible Trivia</option>
+      <option value="riddle">Bible Riddle</option>
+      <option value="scramble">Word Scramble</option>
+      <option value="who">Who Did This?</option>
+    </select>
+    <p>Level: <span id="lvl">1</span>/100 <button onclick="nextLevel()">Next</button> <button onclick="prevLevel()">Prev</button></p>
+    <div id="gameBox" class="game-box card"></div>
+    <input id="gameAns" placeholder="Your answer"><button class="btn" onclick="checkAns()">Check</button>
+    <p id="gameFeedback"></p>
+  </div>
+</section>
+
+<section id="youth">
+  <h2>Youth Corner</h2>
+  <div class="card">
+    <input id="username" placeholder="Create username">
+    <button class="btn" onclick="saveUser()">Join</button>
+    <p id="welcomeUser"></p>
+  </div>
+  <div class="card">
+    <h3>Christian Memes</h3>
+    <div id="memeBox">Jesus looked at memes too... 😂 Drop yours in group!</div>
+    <textarea id="memeInput" placeholder="Post a meme text"></textarea><button class="btn" onclick="postMeme()">Post</button>
+  </div>
+  <div class="card">
+    <h3>Q&A</h3>
+    <div id="qaBox"></div>
+    <input id="qaInput" placeholder="Ask a question"><button class="btn" onclick="postQA()">Ask</button>
+  </div>
+</section>
+
+<section id="bible">
+  <h2>Built-in Bible + Animation</h2>
+  <select id="bibleBook" onchange="loadBible()"><option>John</option><option>Psalms</option><option>Genesis</option><option>Romans</option></select>
+  <div class="card"><p id="bibleText">John 3:16 - For God so loved the world...</p><div style="font-size:48px" id="bibleAnim">✨📖✨</div></div>
+</section>
+
+<section id="kids">
+  <h2>Kids Section</h2>
+  <div class="card"><h3>Coloring Books</h3><canvas id="colorCanvas" width="300" height="200" style="border:1px solid #000"></canvas><br><button class="btn" onclick="clearCanvas()">Clear</button></div>
+  <div class="card"><h3>Short Videos</h3><iframe width="100%" height="200" src="https://www.youtube.com/embed/18Las0Zbnj4" frameborder="0" allowfullscreen></iframe></div>
+</section>
+
+<section id="wallpapers">
+  <h2>Bible Wallpapers</h2>
+  <div class="grid" id="wpGrid"></div>
+</section>
+
+<script>
+// NAV
+const pages=["home","timetable","games","youth","bible","kids","wallpapers"];
+const nav=document.getElementById('nav');
+pages.forEach(p=>{
+  let b=document.createElement('button');
+  b.textContent=p.toUpperCase();
+  b.onclick=()=>{document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));document.getElementById(p).classList.add('active');document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));b.classList.add('active')};
+  nav.appendChild(b);
+});
+
+// Language switch
+let lang=localStorage.getItem('riy_lang')||'en';
+const dict={en:{welcome:"Welcome"},ny:{welcome:"Takulandirani"}};
+
+// Timetable
+const ttData=[
+ {day:"MONDAY",title:"Preaching",desc:"Drop a short sermon - 7PM CAT"},
+ {day:"TUESDAY",title:"God Did",desc:"Testimony day. What God has done."},
+ {day:"WEDNESDAY",title:"Melody Drop",desc:"All about Christian vibes and tunes"},
+ {day:"THURSDAY",title:"Bible Study",desc:"Deep dive, 1 chapter / topic. 8PM"},
+ {day:"FRIDAY",title:"Debate",desc:"Hot Christian topics, defend with verse."},
+ {day:"SATURDAY",title:"Game Night",desc:"A selected game will be played - 8PM"},
+ {day:"SUNDAY",title:"Take Aways",desc:"What you learned from Sunday service."}
+];
+document.getElementById('tt').innerHTML=ttData.map(t=>`<div class="card"><b>${t.day} -> ${t.title}</b><br>${t.desc}</div>`).join('');
+
+// Anonymous WhatsApp
+function sendAnon(){
+  let msg=document.getElementById('anonMsg').value||"Hello, I need prayer";
+  window.open(`https://wa.me/265999962073?text=${encodeURIComponent(msg)}`,"_blank");
+}
+
+// Games - 100 levels generated
+let currentLevel=1, currentGame='emoji';
+const gamesDB={
+ emoji:Array.from({length:100},(_,i)=>({q:`Level ${i+1}: 👑➕✝️ = ? (Hint: King of Kings)`,a:["jesus","king jesus"][i%2]})),
+ trivia:Array.from({length:100},(_,i)=>({q:`Trivia ${i+1}: Who built the ark?`,a:"noah"})),
+ riddle:Array.from({length:100},(_,i)=>({q:`Riddle ${i+1}: I walked with God and was taken, who am I?`,a:"enoch"})),
+ scramble:Array.from({length:100},(_,i)=>({q:`Unscramble ${i+1}: SEJUS`,a:"jesus"})),
+ who:Array.from({length:100},(_,i)=>({q:`Who kissed Jesus? (Level ${i+1})`,a:"judas"}))
+};
+// make more varied answers quickly
+gamesDB.trivia[1]={q:"How many days was Jesus in desert?",a:"40"};
+gamesDB.who[1]={q:"Who denied Jesus 3 times?",a:"peter"};
+
+function loadGame(){
+ currentGame=document.getElementById('gameSelect').value;
+ currentLevel=1;
+ renderGame();
+}
+function renderGame(){
+ document.getElementById('lvl').textContent=currentLevel;
+ let item=gamesDB[currentGame][currentLevel-1];
+ document.getElementById('gameBox').textContent=item.q;
+ document.getElementById('gameFeedback').textContent="";
+}
+function checkAns(){
+ let user=document.getElementById('gameAns').value.toLowerCase().trim();
+ let correct=gamesDB[currentGame][currentLevel-1].a.includes ? gamesDB[currentGame][currentLevel-1].a : gamesDB[currentGame][currentLevel-1].a;
+ let isCorrect=Array.isArray(correct) ? correct.includes(user) : user===correct;
+ document.getElementById('gameFeedback').textContent=isCorrect?"Correct! 🎉":"Try again - hint: pray first!";
+ if(isCorrect && currentLevel<100){setTimeout(()=>{currentLevel++;renderGame();document.getElementById('gameAns').value=""},800)}
+}
+function nextLevel(){if(currentLevel<100){currentLevel++;renderGame()}}
+function prevLevel(){if(currentLevel>1){currentLevel--;renderGame()}}
+loadGame();
+
+// Youth
+function saveUser(){let u=document.getElementById('username').value;localStorage.setItem('riy_user',u);document.getElementById('welcomeUser').textContent="Welcome, "+u+"!"}
+let memes=[];function postMeme(){let t=document.getElementById('memeInput').value;memes.push(t);document.getElementById('memeBox').innerHTML+=`<div class="card">${t}</div>`}
+let qas=[];function postQA(){let t=document.getElementById('qaInput').value;qas.push(t);document.getElementById('qaBox').innerHTML+=`<div class="card">Q: ${t}</div>`}
+
+// Bible
+function loadBible(){let book=document.getElementById('bibleBook').value;document.getElementById('bibleText').textContent=book+" - The Lord is my shepherd... (animated)";document.getElementById('bibleAnim').textContent=["✨📖✨","🙏✨🕊️","🔥📜🔥"][Math.floor(Math.random()*3)]}
+
+// Canvas for kids
+const canvas=document.getElementById('colorCanvas');const ctx=canvas.getContext('2d');let drawing=false;
+canvas.addEventListener('mousedown',()=>drawing=true);canvas.addEventListener('mouseup',()=>drawing=false);
+canvas.addEventListener('mousemove',e=>{if(!drawing)return;ctx.fillStyle='#0f3d2e';ctx.fillRect(e.offsetX,e.offsetY,5,5)});
+function clearCanvas(){ctx.clearRect(0,0,300,200)}
+
+// Wallpapers
+const verses=["Philippians 4:13","Jeremiah 29:11","Psalm 23:1","Romans 8:28"];
+document.getElementById('wpGrid').innerHTML=verses.map((v,i)=>`<div class="wallpaper" style="background:${['#0f3d2e','#14532d','#1e3a8a','#7c2d12'][i]}">${v}<br><a href="#" onclick="alert('Long press to save image - ${v}')" style="color:white">Download</a></div>`).join('');
+
+// Daily song rotation
+const songs=[{t:"Way Maker - Sinach",yt:"https://www.youtube.com/results?search_query=Way+Maker+Sinach",sp:"https://open.spotify.com/search/Way%20Maker%20Sinach"},{t:"Goodness of God - CeCe Winans",yt:"https://www.youtube.com/results?search_query=Goodness+of+God",sp:"https://open.spotify.com/search/Goodness%20of%20God"}];
+let day=new Date().getDate()%songs.length;document.getElementById('dailySongText').textContent="Today: "+songs[day].t;
+document.getElementById('ytLink').href=songs[day].yt;document.getElementById('spLink').href=songs[day].sp;
+</script>
+</body>
+</html>
