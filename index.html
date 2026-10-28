@@ -1,127 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <script src="firebase-config.js"></script>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Roots In Yahweh - Calls</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<style>body{font-family:Inter;background:#0a0a0a;color:white}.serif{font-family:'Instrument Serif'}.glass{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08)}.gold{color:#E6C88E}.whatsapp-bg{background:#E5DDD5;background-image:url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="Roots In Yahweh (R.I.Y.) — growing in faith, community, leadership and the Word of God.">
+<title>Roots In Yahweh | R.I.Y.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050505;--card:#121212;--card2:#1a1a1a;--gold:#ffd700;--gold2:#ffb400;--line:rgba(255,215,0,.18);--text:#f5f3e8;--muted:#aaa596}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:radial-gradient(1000px 500px at 50% -10%,#222 0%,#050505 60%);color:var(--text);min-height:100vh;line-height:1.55}h1,h2,h3{font-family:Cinzel,Georgia,serif;line-height:1.25}a{color:inherit}button,input,textarea,select{font:inherit}button{cursor:pointer}header{overflow:hidden;background:linear-gradient(180deg,#151515,#080808);padding:34px 16px 28px;text-align:center;border-bottom:1px solid var(--line);position:relative}header:before{content:"";position:absolute;top:-180px;left:50%;transform:translateX(-50%);width:520px;height:520px;background:radial-gradient(circle,rgba(255,215,0,.16),transparent 70%);pointer-events:none}.logo-wrap{width:124px;height:124px;margin:0 auto 14px;border-radius:50%;padding:4px;background:linear-gradient(135deg,var(--gold),var(--gold2));box-shadow:0 0 38px #ffd70044;position:relative;z-index:1}.logo-wrap img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:#000;display:block}header h1{font-size:clamp(1.55rem,5vw,2.2rem);color:var(--gold);letter-spacing:.5px;text-shadow:0 0 20px #ffd70044;position:relative;z-index:1}header p{opacity:.82;max-width:680px;margin:8px auto 0;position:relative;z-index:1}.hero-links{margin-top:16px;position:relative;z-index:1;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#080808;padding:10px 16px;border-radius:30px;text-decoration:none;font-weight:800;border:1px solid transparent;box-shadow:0 4px 15px #ffd70022;transition:transform .15s,filter .15s}.btn:hover{transform:translateY(-1px);filter:brightness(1.06)}.btn-outline{background:transparent;border-color:var(--gold);color:var(--gold);box-shadow:none}.btn:focus-visible,button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid white;outline-offset:3px}nav{position:sticky;top:0;z-index:10;background:#050505eF;backdrop-filter:blur(12px);display:flex;gap:8px;overflow-x:auto;padding:10px 12px;border-bottom:1px solid var(--line);scrollbar-width:thin}nav button{white-space:nowrap;padding:9px 14px;border-radius:30px;border:1px solid var(--line);background:var(--card);color:var(--muted);font-weight:800;font-size:.8rem}nav button.active{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;border-color:transparent}main{padding-bottom:28px}section{padding:22px 16px;max-width:980px;margin:auto;display:none;animation:fade .25s ease}section.active{display:block}@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}.card{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:18px;padding:18px;margin:12px 0;box-shadow:0 8px 24px #0005}.card.gold{border-color:#ffd70055;box-shadow:0 0 0 1px #ffd70012,0 10px 30px #0007}.card h3{margin-bottom:8px}.welcome-head{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.badge{display:inline-block;background:#ffd7001f;border:1px solid #ffd70044;color:var(--gold);padding:4px 10px;border-radius:20px;font-size:11px;font-weight:800}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:10px}.feature{padding:14px;background:#101010;border:1px solid var(--line);border-radius:14px}.muted{color:var(--muted)}.field{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);background:#0b0b0b;color:white;margin:6px 0;outline:none}.field:focus{border-color:var(--gold)}textarea.field{min-height:105px;resize:vertical}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.row>.grow{flex:1;min-width:160px}.section-title{color:var(--gold);margin:4px 0 12px}.song-chip,.pill{display:inline-block;padding:6px 11px;border-radius:20px;background:#1a1a1a;border:1px solid var(--line);font-size:12px;margin:3px;color:var(--muted)}.song-chip{color:var(--text);cursor:pointer}.song-chip:hover{border-color:var(--gold);color:var(--gold)}.game-box{min-height:100px;font-size:18px;font-weight:800;display:flex;align-items:center}.wallpaper{min-height:165px;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;font-weight:800;text-align:center;padding:15px;border:1px solid var(--line);background:radial-gradient(circle at top,#3b3000,#111 70%);gap:8px}.wallpaper .verse{color:var(--gold);font-size:.78rem}.wallpaper .tree{font-size:2rem}#chatWrap{display:flex;flex-direction:column;height:min(560px,70vh);min-height:380px;background:#080808;border-radius:18px;overflow:hidden;border:1px solid var(--line)}#chatHead{background:#141414;padding:12px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line)}#chatHead .logo-wrap{width:38px;height:38px;margin:0;flex-shrink:0}#chatMsgs{flex:1;overflow:auto;padding:14px;background:radial-gradient(600px 300px at 20% 0%,#ffd7000f,transparent),#080808;display:flex;flex-direction:column;gap:10px}.msg{max-width:85%;padding:10px 12px;border-radius:14px;line-height:1.4;overflow-wrap:anywhere}.msg.me{align-self:flex-end;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;border-bottom-right-radius:4px}.msg.other{align-self:flex-start;background:#1e1e1e;border-bottom-left-radius:4px;border:1px solid #ffffff10}.msg-meta{font-size:10px;opacity:.7;margin-top:4px}.chat-compose{display:flex;gap:8px;padding:10px;background:#141414;border-top:1px solid var(--line);align-items:center}.chat-compose .field{margin:0;min-width:0}.chat-compose button{flex-shrink:0}.notice{padding:11px 13px;border:1px solid var(--line);border-radius:12px;background:#ffd7000b;color:var(--muted);font-size:.86rem}details summary{cursor:pointer;color:var(--gold);font-weight:800}canvas{max-width:100%;height:auto;touch-action:none;display:block}footer{text-align:center;color:var(--muted);padding:24px 16px;border-top:1px solid var(--line);font-size:.85rem}iframe{max-width:100%}.empty{color:var(--muted);font-size:.9rem;padding:10px 0}@media(max-width:520px){section{padding:16px 12px}.card{padding:14px}.welcome-head h2{font-size:1.15rem}.chat-compose{gap:5px}.chat-compose .btn{padding:10px 12px}header{padding-top:26px}}
+</style>
 </head>
 <body>
-<header class="sticky top-0 z-50 bg-black/90 border-b border-white/10"><div class="max-w-6xl mx-auto px-5 py-4 flex justify-between"><div class="flex gap-2 items-center"><div class="w-8 h-8 rounded-full bg-[#111] border border-[#E6C88E]/30 flex items-center justify-center">🌳</div><span>Roots In Yahweh</span></div><button id="menuBtn" class="w-10 h-10 rounded-full glass">☰</button></div></header>
-<div id="menu" class="fixed inset-0 z-[60] bg-black/95 hidden flex-col"><div class="p-5 flex justify-between border-b border-white/10"><span>Menu</span><button id="closeMenu" class="w-10 h-10 rounded-full glass">✕</button></div><div class="p-6"><button data-go="home" class="menu-link w-full text-left py-4 text-3xl serif border-b border-white/10">Home</button><button data-go="chat" class="menu-link w-full text-left py-4 text-3xl serif border-b border-white/10 text-[#25D366]">Chatroom + Calls ★</button><button data-go="bibleai" class="menu-link w-full text-left py-4 text-2xl serif border-b border-white/10">Bible AI</button></div></div>
-<main class="max-w-6xl mx-auto px-5">
-<section id="home" class="py-10"><h1 class="serif text-[50px] leading-[0.9]">Go deep.<br>Stay <span class="italic gold">rooted.</span></h1><div class="mt-6 flex gap-3"><button data-go="chat" class="menu-link px-6 py-3 rounded-full bg-[#25D366] text-black font-bold">💬 Chat + Calls</button><button data-go="bibleai" class="menu-link px-6 py-3 rounded-full glass">🤖 Bible AI</button></div><div class="mt-8 bg-[#F5F3EF] text-black rounded-[28px] p-8"><blockquote id="dailyVerse" class="serif text-[28px] text-center"></blockquote><p id="dailyRef" class="text-center mt-2 font-bold"></p></div></section>
-<section id="bibleai" class="hidden py-10"><h2 class="serif text-4xl">Bible AI - No math, no repeat</h2><div class="mt-4 bg-[#F5F3EF] text-black p-5 rounded-[24px]"><div class="flex flex-wrap gap-2 mb-3"><button onclick="quickAsk('who is Jesus')" class="px-3 py-1.5 rounded-full bg-black text-white text-xs">Who is Jesus?</button><button onclick="quickAsk('how do I get saved?')" class="px-3 py-1.5 rounded-full border text-xs">How to be saved?</button></div><div id="aiChat" class="h-[300px] overflow-y-auto bg-white rounded-xl border p-3 space-y-2 text-sm"><div class="p-3 rounded-xl bg-black text-white"><b>Roots AI:</b> Bible-only, no repeat. Ask "who is Jesus".</div></div><div class="flex gap-2 mt-3"><input id="aiInput" placeholder="Ask Bible question..." class="flex-1 px-4 py-3 rounded-full border text-sm"><button onclick="askAI()" class="w-12 h-12 rounded-full bg-black text-white">↑</button></div></div></section>
-<section id="chat" class="py-10">
-<div class="flex gap-2"><span class="px-3 py-1 rounded-full bg-[#25D366] text-white text-[10px] font-bold">NO BOTS • VOICE & VIDEO CALLS</span></div>
-<h2 class="serif text-[40px] leading-[0.9] mt-4">WhatsApp chat<br><span class="italic gold">+ calls.</span></h2>
-<p class="text-white/60 text-sm mt-2">Username once → chat + voice/video calls like WhatsApp. Real people only.</p>
-<div class="grid md:grid-cols-[0.9fr_1.1fr] gap-4 mt-6">
-<div class="rounded-[24px] bg-[#F5F3EF] text-black p-5">
-<input id="usernameInput" placeholder="e.g. jason" maxlength="20" class="w-full px-5 py-3.5 rounded-full border text-sm"><button onclick="createUsername()" class="w-full mt-3 py-3 rounded-full bg-[#075E54] text-white font-bold">Join Group & Enable Calls</button>
-<p id="usernameStatus" class="text-[11px] opacity-60 mt-2"></p><div id="currentUserDisplay" class="hidden mt-3 p-3 rounded-xl bg-[#25D366]/20 text-sm"></div>
-<div class="mt-4 p-3 rounded-xl bg-white border text-[11px]"><p class="font-bold">How calls work:</p><p class="mt-1">• Create same username on 2 devices<br>• Click 📞 to call by ID<br>• Allow mic/camera<br>• Peer-to-peer — no server saves calls</p><p class="mt-2 font-bold">Status:</p><p id="peerStatus">Not connected</p><p>Your call ID: <span id="myPeerId" class="font-bold">-</span></p></div>
-<button onclick="clearChat()" class="mt-3 text-[11px] underline">Clear chat</button>
-</div>
-<div class="rounded-[24px] overflow-hidden border border-white/10 flex flex-col shadow-2xl" style="height:620px">
-<div class="bg-[#075E54] px-4 py-3 flex items-center justify-between text-white">
-<div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">←</div><div class="w-10 h-10 rounded-full bg-[#128C7E] flex items-center justify-center">🌳</div><div><p class="font-bold text-[14px]">Roots In Yahweh Family</p><p class="text-[11px] opacity-80">47 members • Calls enabled</p></div></div>
-<div class="flex gap-3"><button onclick="startCallPrompt(false)" class="text-xl">📹</button><button onclick="startCallPrompt(true)" class="text-xl">📞</button><span>⋮</span></div>
-</div>
-<div id="chatMessages" class="flex-1 whatsapp-bg overflow-y-auto p-3 space-y-2"><div class="flex justify-center my-4"><span class="bg-[#FFF5C4] text-[#54656F] text-[11px] px-3 py-1.5 rounded-[8px] shadow">🔒 No bots, real calls. Be kind, be rooted.</span></div><div id="emptyState" class="flex flex-col items-center justify-center h-[200px] text-center"><div class="w-16 h-16 rounded-full bg-[#25D366]/20 flex items-center justify-center text-2xl">💬</div><p class="text-[#54656F] text-sm mt-3">No messages yet</p></div></div>
-<div class="bg-[#F0F0F0] p-2 flex items-center gap-2"><div class="flex-1 bg-white rounded-[24px] flex items-center px-3 py-1"><input id="chatInput" disabled placeholder="Create username to join" class="flex-1 px-3 py-2.5 bg-transparent text-[14px] text-black focus:outline-none"><span class="opacity-40 ml-2">📎</span></div><button id="chatSendBtn" onclick="sendChatMessage()" disabled class="w-12 h-12 rounded-full bg-[#25D366] text-white text-xl">➤</button></div>
-</div>
-</div>
-<div id="callModal" class="fixed inset-0 z-[80] bg-black/90 hidden flex-col items-center justify-center p-6">
-<div class="bg-[#111] rounded-[24px] p-8 w-full max-w-sm text-center border border-white/10">
-<p id="callStatus" class="text-white/60 text-sm">Calling...</p>
-<h3 id="callName" class="serif text-3xl mt-2">jason</h3>
-<div class="mt-6 flex justify-center gap-4"><div class="w-24 h-24 rounded-full bg-[#075E54] flex items-center justify-center text-4xl">🌳</div></div>
-<div class="mt-6"><video id="remoteVideo" autoplay playsinline class="w-full h-48 bg-black rounded-xl hidden"></video><video id="localVideo" autoplay muted playsinline class="w-24 h-24 bg-black rounded-full absolute bottom-32 right-8 hidden border-2 border-white"></video><audio id="remoteAudio" autoplay></audio></div>
-<div class="flex justify-center gap-4 mt-8"><button onclick="toggleMute()" id="muteBtn" class="w-12 h-12 rounded-full bg-white/10">🎤</button><button onclick="endCall()" class="w-14 h-14 rounded-full bg-red-500 flex items-center justify-center text-xl">📞</button><button onclick="toggleVideo()" id="videoBtn" class="w-12 h-12 rounded-full bg-white/10">📹</button></div>
-<p class="text-[11px] text-white/40 mt-4">Peer-to-peer encrypted call</p>
-</div>
-</div>
-<div id="incomingCall" class="fixed bottom-20 left-5 right-5 z-[81] bg-white text-black p-4 rounded-2xl shadow-2xl hidden flex justify-between items-center"><div><p class="font-bold" id="incomingName">Incoming call</p><p class="text-xs opacity-60">Tap to answer</p></div><div class="flex gap-2"><button onclick="declineCall()" class="w-12 h-12 rounded-full bg-red-500 text-white">✕</button><button onclick="answerCall()" class="w-12 h-12 rounded-full bg-[#25D366] text-white">📞</button></div></div>
+<header>
+  <div class="logo-wrap"><img src="logo.jpg" alt="Roots In Yahweh logo" onerror="this.onerror=null;this.src='https://placehold.co/300x300/050505/FFD700?text=R.I.Y'"></div>
+  <h1>Roots In Yahweh — R.I.Y</h1>
+  <p>Helping the young generation battle addictions (sin) through faith, fellowship and the Word of God. 🌳✨</p>
+  <div class="hero-links">
+    <a class="btn" href="https://www.tiktok.com/@rootsinyahweh" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">TikTok ↗</a>
+    <a class="btn btn-outline" href="https://www.instagram.com/roots_in_yahweh/" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">Instagram ↗</a>
+    <a class="btn" href="https://chat.whatsapp.com/D485PfBGPLO5ONerm2EPY0" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">Join WhatsApp Group ↗</a>
+  </div>
+</header>
+<nav id="nav" aria-label="Main navigation"></nav>
+<main>
+<section id="home" class="active">
+  <div class="card gold">
+    <div class="welcome-head"><span style="font-size:25px">🌟</span><h2>Welcome to Roots In Yahweh</h2><span class="badge">SINCE 14 JUNE 2025</span></div>
+    <p style="margin:12px 0;color:#e8e5d9">We started on 14 June 2025. Since then, we have been growing together, helping people know the Word of God and practise leadership principles with the Bible as our guide.</p>
+    <div class="grid">
+      <div class="feature">🤸🏽 Find fellow Christians to interact with</div><div class="feature">🙏🏽 Find guidance for everyday life</div><div class="feature">🛐 Find strength in Jesus</div><div class="feature">😁 Discover joy and fellowship in Christianity</div>
+    </div>
+  </div>
+  <div class="card gold">
+    <h3>🎵 Daily Song — 30 Songs Library</h3><p id="dailySongText" style="margin:8px 0;font-weight:800;color:var(--gold)"></p>
+    <div class="row"><a id="ytLink" class="btn" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">YouTube ▶</a><a id="spLink" class="btn btn-outline" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">Spotify ↗</a><button class="btn btn-outline" id="shuffleSong">🔀 Shuffle</button></div>
+    <details style="margin-top:12px"><summary>See all 30 songs</summary><div id="songList" style="margin-top:10px;display:flex;flex-wrap:wrap"></div></details>
+  </div>
+  <div class="card"><h3>🕊️ Anonymous Help & Prayer</h3><p class="muted">Write your message below. WhatsApp opens with the message ready to send; it is not sent automatically.</p><textarea class="field" id="anonMsg" maxlength="1500" placeholder="Type your prayer request..."></textarea><button class="btn" id="sendAnon">Continue to WhatsApp ↗</button></div>
 </section>
+<section id="timetable"><h2 class="section-title">📅 Event Timetable</h2><p class="muted">Our weekly rhythm — confirm any last-minute changes with the group admins.</p><div id="tt"></div></section>
+<section id="games">
+  <h2 class="section-title">🎮 Game Zone — 100 Levels Each</h2>
+  <div class="card gold"><div class="row"><select id="gameSelect" class="field grow" style="max-width:260px;margin:0"><option value="emoji">Emoji Game 👑</option><option value="trivia">Bible Trivia 🧠</option><option value="riddle">Bible Riddle 🔍</option><option value="scramble">Word Scramble 🔤</option><option value="who">Who Did This? 👤</option></select><span class="badge">Level <span id="lvl">1</span>/100</span><span class="pill">🏆 <span id="pts">0</span> pts</span><span class="pill">🔥 Streak <span id="streak">0</span></span></div>
+  <div id="gameBox" class="game-box card" aria-live="polite"></div><div class="row"><input id="gameAns" class="field grow" autocomplete="off" placeholder="Your answer…"><button class="btn" id="checkAns">Check ✓</button></div><p id="gameFeedback" style="margin-top:8px;font-weight:800;color:var(--gold)" aria-live="polite"></p><div class="row"><button class="btn btn-outline" id="prevLevel">← Previous</button><button class="btn" id="nextLevel">Next →</button><button class="btn btn-outline" id="resetGame">Reset score</button></div></div>
+</section>
+<section id="youth">
+  <h2 class="section-title">💬 Youth Corner</h2>
+  <div class="notice">This page is a front-end demo: registration and chat history stay in this browser only. It is not a real private or multi-device chat. Do not enter a real phone number, password, or sensitive prayer request here. A secure online group needs a backend and access rules.</div>
+  <div id="registerCard" class="card gold">
+    <h3>🔐 Join the R.I.Y Youth Chat</h3>
+    <p class="muted">Create an account with a username and password. No phone number is needed. Your username is visible to other members.</p>
+    <label for="authUsername">Username</label><input id="authUsername" class="field" maxlength="20" minlength="3" placeholder="e.g. FaithWarrior22" autocomplete="username">
+    <label for="authPassword">Password</label><input id="authPassword" class="field" type="password" minlength="8" placeholder="At least 8 characters" autocomplete="current-password">
+    <div class="row"><button class="btn" id="signInBtn" type="button">Sign in</button><button class="btn btn-outline" id="signUpBtn" type="button">Create account</button></div>
+    <p id="regMsg" style="color:var(--gold);margin-top:8px" aria-live="polite"></p>
+    <p class="notice">Use a password you do not use elsewhere. This demo uses a username-based Firebase sign-in address internally; it does not require a real email address. Password recovery must be handled by an administrator unless you add email-based recovery.</p>
+  </div>
+  <div id="chatWrap" style="display:none">
+    <div id="chatHead"><div class="logo-wrap"><img src="logo.jpg" alt="R.I.Y logo"></div><div><b id="chatUserDisplay">R.I.Y Youth Chat</b><div id="chatStatus" style="font-size:11px;color:var(--gold)">Connected • Ephesians 4:3</div></div><button class="btn btn-outline" id="logoutChat" style="margin-left:auto;padding:6px 12px">Sign out</button></div>
+    <div class="row" style="padding:10px;background:#111;border-bottom:1px solid var(--line)">
+      <button class="btn" id="groupModeBtn" type="button">🌍 Group chat</button>
+      <button class="btn btn-outline" id="privateModeBtn" type="button">🔒 Private message</button>
+    </div>
+    <div id="privateControls" class="card" style="display:none;margin:8px">
+      <label for="dmUsername">Message a member by username</label>
+      <div class="row"><input id="dmUsername" class="field grow" maxlength="20" placeholder="Enter exact username"><button class="btn" id="openDmBtn" type="button">Open chat</button></div>
+      <p id="dmStatus" class="muted" aria-live="polite"></p>
+    </div>
+    <div id="chatTitle" style="padding:8px 14px;color:var(--gold);font-weight:800">R.I.Y Group Chat</div>
+    <div id="chatMsgs" aria-live="polite"></div>
+    <form id="chatForm" class="chat-compose"><input id="chatInput" class="field" maxlength="1000" placeholder="Share a verse or encouragement…" autocomplete="off" aria-label="Chat message"><button class="btn" type="submit">Send ➤</button></form>
+    <p class="muted" style="font-size:11px;padding:0 12px 10px;background:#141414">Please be respectful. Do not share private information. Messages are stored online.</p>
+  </div>
+  <div class="card"><h3>🔥 Q&A Wall</h3><div id="qaBox"></div><form id="qaForm" class="row"><input id="qaInput" class="field grow" maxlength="500" placeholder="Ask a Bible or faith question"><button class="btn" type="submit">Ask</button></form></div>
+  <div class="card"><h3>😂 Christian Memes & Encouragement</h3><div id="memeBox"><p class="muted">Share a clean joke, encouraging thought, or meme caption.</p></div><form id="memeForm"><textarea id="memeInput" class="field" maxlength="500" placeholder="Write a caption or encouraging thought…"></textarea><button class="btn" type="submit">Post</button></form></div>
+</section>
+<section id="bible"><h2 class="section-title">📖 Bible Verses & Animation</h2><div class="row"><select id="bibleBook" class="field grow"><option>John 3:16</option><option>Psalm 23:1</option><option>Genesis 1:1</option><option>Romans 8:28</option><option>Philippians 4:13</option><option>Jeremiah 29:11</option><option>Proverbs 3:5–6</option><option>Isaiah 41:10</option><option>Micah 6:8</option><option>Psalm 119:105</option></select><button class="btn btn-outline" id="loadBible">✨ Show verse</button></div><div class="card gold" style="text-align:center"><p id="bibleText" style="font-size:18px;font-weight:700">Choose a passage to begin.</p><div id="bibleAnim" style="font-size:48px;margin-top:10px" aria-hidden="true">✨📖✨</div><p class="muted" style="font-size:.8rem;margin-top:8px">Verse wording can vary by Bible translation.</p></div></section>
+<section id="kids"><h2 class="section-title">🧒 Kids Section</h2><div class="card"><h3>🎨 Colouring Canvas — Golden Tree</h3><p class="muted">Draw with your finger or mouse. Choose a brush colour.</p><canvas id="colorCanvas" width="680" height="440" aria-label="Drawing canvas" style="width:100%;max-width:680px;border:1px dashed var(--line);border-radius:12px;background:#0f0f0f"></canvas><div class="row" style="margin-top:10px"><button class="btn btn-outline" id="goldBrush">Gold brush</button><button class="btn btn-outline" id="whiteBrush">White brush</button><button class="btn btn-outline" id="clearCanvas">Clear</button><button class="btn" id="downloadDrawing">Save drawing</button></div></div><div class="card"><h3>📺 Short Video</h3><div class="notice">The embedded video may be unavailable depending on YouTube settings.</div><iframe title="Christian short video" width="100%" height="220" style="border-radius:12px;margin-top:10px" src="https://www.youtube-nocookie.com/embed/18Las0Zbnj4" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></section>
+<section id="wallpapers"><h2 class="section-title">🖼️ Bible Wallpapers — Black & Gold</h2><p class="muted">Tap a design to download it as an SVG wallpaper image.</p><div class="grid" id="wpGrid"></div></section>
 </main>
+<footer>Roots In Yahweh (R.I.Y.) · Growing deeper in the Word, stronger in faith, together in fellowship. 🌳</footer>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
+<script src="./firebase-config.js"></script>
 <script>
-const menu=document.getElementById('menu');document.getElementById('menuBtn').onclick=()=>{menu.classList.remove('hidden');menu.classList.add('flex')};document.getElementById('closeMenu').onclick=()=>menu.classList.add('hidden');function showSection(id){document.querySelectorAll('main section').forEach(s=>s.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');menu.classList.add('hidden');}document.querySelectorAll('.menu-link').forEach(b=>b.onclick=()=>showSection(b.dataset.go));
-const verses=[{t:"He is like a tree planted by streams of water",r:"PSALM 1:3"},{t:"Rooted and built up in Him",r:"COLOSSIANS 2:7"}];const v=verses[new Date().getDate()%verses.length];const dv=document.getElementById('dailyVerse');if(dv){dv.innerText='"'+v.t+'"';document.getElementById('dailyRef').innerText=v.r;}
-function quickAsk(q){document.getElementById('aiInput').value=q;askAI();}
-const BIBLE_BRAIN={"who is jesus":"**Who is Jesus?** Jesus is God come as man. John 1:1,14 Word was God became flesh, John 3:16 gave Son, Col 1:15 Image of invisible God, Phil 2:6-8 died on cross. Trust Him = forgiven Romans 10:9","how to be saved":"**How to be saved?** 1. Admit Rom 3:23 sinned 2. Believe Rom 10:9 Jesus died & rose 3. Call Rom 10:13. Pray: Jesus forgive me, be my Lord Amen."};
-function getSmartAnswer(q){const l=q.toLowerCase();for(let k in BIBLE_BRAIN){if(k.split('|').some(x=>l.includes(x)))return BIBLE_BRAIN[k];}if(l.match(/solve|math/))return "**I don't do math — Bible only.** Ask who is Jesus?";return `**You asked: "${q}"** Col 2:7 Rooted in Him. Pray James 1:5 for wisdom.`;}
-async function askAI(){const input=document.getElementById('aiInput');const q=input.value.trim();if(!q)return;const chat=document.getElementById('aiChat');chat.innerHTML+=`<div class="p-2 bg-black/5"><b>You:</b> ${q}</div>`;input.value='';const load=document.createElement('div');load.className='p-2 bg-black text-white/50';load.innerText='Thinking...';chat.appendChild(load);setTimeout(()=>{load.remove();const div=document.createElement('div');div.className='p-3 bg-black text-white';div.innerHTML='<b>Roots AI:</b><br>'+getSmartAnswer(q).replace(/\n/g,'<br>');chat.appendChild(div);},500);}
-let currentUsername=localStorage.getItem('roots_username')||'';let peer=null;let currentCall=null;let localStream=null;let incomingCallData=null;
-function updateUsernameUI(){const d=document.getElementById('currentUserDisplay');const s=document.getElementById('usernameStatus');const inp=document.getElementById('usernameInput');const ci=document.getElementById('chatInput');const btn=document.getElementById('chatSendBtn');if(currentUsername){d.classList.remove('hidden');d.innerHTML=`In group as: <b>${currentUsername} 🌳</b> • Online`;s.innerText=`Username: ${currentUsername} — chat + calls enabled`;inp.value=currentUsername;ci.disabled=false;btn.disabled=false;ci.placeholder=`Type as ${currentUsername}`;loadMessages();initPeer();}else{d.classList.add('hidden');s.innerText='No username';ci.disabled=true;btn.disabled=true;}}
-function createUsername(){let n=document.getElementById('usernameInput').value.trim();if(!n||n.length<3)return alert('Min 3');currentUsername=n;localStorage.setItem('roots_username',n);updateUsernameUI();addMessage('System',`${n} joined the group`,true);}
-function loadMessages(){renderAllMessages();}function renderAllMessages(){const box=document.getElementById('chatMessages');const saved=JSON.parse(localStorage.getItem('roots_messages')||'[]');box.querySelectorAll('.msg-bubble').forEach(m=>m.remove());saved.forEach(m=>renderMessage(m.user,m.text,m.time,m.isSystem,false));if(saved.length===0)document.getElementById('emptyState').style.display='flex';else document.getElementById('emptyState').style.display='none';box.scrollTop=box.scrollHeight;}
-function renderMessage(user,text,time,isSystem){const box=document.getElementById('chatMessages');const isMe=user===currentUsername;const div=document.createElement('div');div.className='msg-bubble';if(isSystem){div.innerHTML=`<div class="flex justify-center my-2"><span class="bg-[#FFF5C4] text-[11px] px-3 py-1.5 rounded-[8px]">${text}</span></div>`;}else if(isMe){div.innerHTML=`<div class="flex justify-end"><div class="bg-[#DCF8C6] rounded-[8px] px-3 py-2 max-w-[75%]"><div class="text-[13px] text-black">${escapeHtml(text)}</div><div class="flex justify-end gap-1 mt-1"><span class="text-[11px] text-[#667781]">${time}</span><span class="text-[#53BDEB] text-[11px]">✓✓</span></div></div></div>`;}else{div.innerHTML=`<div class="flex justify-start"><div class="bg-white rounded-[8px] px-3 py-2 max-w-[75%]"><div class="text-[12px] font-bold text-[#1FA855]">${escapeHtml(user)}</div><div class="text-[13px] text-black mt-1">${escapeHtml(text)}</div><div class="text-[11px] text-[#667781] mt-1 text-right">${time}</div></div></div>`;}box.appendChild(div);}
-function escapeHtml(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML;}
-function addMessage(user,text,isSystem=false){const time=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});const saved=JSON.parse(localStorage.getItem('roots_messages')||'[]');saved.push({user,text,time,isSystem});localStorage.setItem('roots_messages',JSON.stringify(saved));renderMessage(user,text,time,isSystem,true);}
-function sendChatMessage(){const i=document.getElementById('chatInput');const t=i.value.trim();if(!t)return;addMessage(currentUsername,t,false);i.value='';}
-function clearChat(){if(confirm('Clear?')){localStorage.removeItem('roots_messages');location.reload();}}
-document.getElementById('chatInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')sendChatMessage()});
-document.getElementById('usernameInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')createUsername()});
-document.getElementById('aiInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')askAI()});
-updateUsernameUI();showSection('chat');
-function initPeer(){
- if(peer) peer.destroy();
- const cleanId = currentUsername.toLowerCase().replace(/[^a-z0-9]/g,'') + '-' + Math.floor(Math.random()*1000);
- peer = new Peer(cleanId);
- document.getElementById('peerStatus').innerText='Connecting...';
- peer.on('open', id=>{document.getElementById('myPeerId').innerText=id;document.getElementById('peerStatus').innerText='Ready for calls ✅ Share your ID';});
- peer.on('call', call=>{incomingCallData=call;document.getElementById('incomingName').innerText=call.metadata?.name||call.peer+' is calling...';document.getElementById('incomingCall').classList.remove('hidden');document.getElementById('incomingCall').classList.add('flex');});
- peer.on('error', err=>{document.getElementById('peerStatus').innerText='Error: '+err.type;});
+'use strict';
+const $ = id => document.getElementById(id);
+const pages = [['home','HOME'],['timetable','TIMETABLE'],['games','GAMES'],['youth','YOUTH'],['bible','BIBLE'],['kids','KIDS'],['wallpapers','WALLPAPERS']];
+const nav = $('nav');
+pages.forEach(([id,label],index)=>{const b=document.createElement('button');b.type='button';b.textContent=label;b.id='btn-'+id;b.setAttribute('aria-controls',id);b.setAttribute('aria-current',index===0?'page':'false');b.addEventListener('click',()=>showPage(id));nav.appendChild(b)});
+function showPage(id){document.querySelectorAll('main section').forEach(s=>s.classList.toggle('active',s.id===id));document.querySelectorAll('nav button').forEach(b=>{const active=b.id==='btn-'+id;b.classList.toggle('active',active);b.setAttribute('aria-current',active?'page':'false')});window.scrollTo({top:0,behavior:'smooth'})}
+$('btn-home').classList.add('active');
+
+const timetable=[
+['MONDAY','Preaching 🔥','Drop a short sermon — 7 PM CAT'],
+['TUESDAY','God Did 🙌','Testimony day: share what God has done.'],
+['WEDNESDAY','Melody Drop 🎵','Christian music, recommendations and worship.'],
+['THURSDAY','Bible Study 📖','Explore one chapter or topic together — 8 PM CAT.'],
+['FRIDAY','Debate 💬','Discuss Christian topics respectfully and support ideas with Scripture.'],
+['SATURDAY','Game Night 🎮','A selected game will be played — 8 PM CAT.'],
+['SUNDAY','Takeaways ✨','Share what you learned from Sunday service.']];
+const tt=$('tt');
+timetable.forEach(([day,title,desc])=>{const card=document.createElement('div');card.className='card';const strong=document.createElement('b');strong.style.color='var(--gold)';strong.textContent=day+' → '+title;const p=document.createElement('p');p.textContent=desc;card.append(strong,p);tt.append(card)});
+
+const songs=[
+['Way Maker','Sinach'],['Goodness of God','CeCe Winans'],['Jireh','Elevation Worship & Maverick City Music'],['Oceans (Where Feet May Fail)','Hillsong UNITED'],['Gratitude','Brandon Lake'],['Build My Life','Pat Barrett'],['Firm Foundation (He Won’t)','Cody Carnes'],['Reckless Love','Cory Asbury'],['You Say','Lauren Daigle'],['The Blessing','Kari Jobe, Cody Carnes & Elevation Worship'],['What a Beautiful Name','Hillsong Worship'],['I Speak Jesus','Charity Gayle'],['Promises','Maverick City Music'],['Same God','Elevation Worship'],['Praise','Elevation Worship'],['Holy Forever','Chris Tomlin'],['Trust in God','Elevation Worship'],['King of Kings','Hillsong Worship'],['See a Victory','Elevation Worship'],['Graves Into Gardens','Elevation Worship'],['Jireh','Maverick City Music'],['No Longer Slaves','Bethel Music'],['Who You Say I Am','Hillsong Worship'],['Battle Belongs','Phil Wickham'],['House of the Lord','Phil Wickham'],['The Goodness','TobyMac & Blessing Offor'],['God Only Knows','for KING & COUNTRY'],['I Thank God','Maverick City Music'],['Made for More','Josh Baldwin'],['Praise You Anywhere','Brandon Lake']];
+let songIndex=0;
+function showSong(index){songIndex=(index+songs.length)%songs.length;const [title,artist]=songs[songIndex];$('dailySongText').textContent=`Today’s pick: ${title} — ${artist}`;$('ytLink').href='https://www.youtube.com/results?search_query='+encodeURIComponent(title+' '+artist);$('spLink').href='https://open.spotify.com/search/'+encodeURIComponent(title+' '+artist)}
+$('shuffleSong').addEventListener('click',()=>{let n;do{n=Math.floor(Math.random()*songs.length)}while(n===songIndex&&songs.length>1);showSong(n)});
+const songList=$('songList');songs.forEach((song,i)=>{const b=document.createElement('button');b.type='button';b.className='song-chip';b.textContent=`${i+1}. ${song[0]} — ${song[1]}`;b.addEventListener('click',()=>showSong(i));songList.append(b)});showSong(Math.floor((Date.now()/86400000)%songs.length));
+
+$('sendAnon').addEventListener('click',()=>{const message=$('anonMsg').value.trim()||'Hello, I would like prayer support.';window.open('https://wa.me/265999962073?text='+encodeURIComponent(message),'_blank','noopener,noreferrer')});
+
+const gameBase={
+emoji:[['👑 + ✝️ = ? (Hint: King of Kings)','Jesus'],['🕊️ + 🔥 = ?','Holy Spirit'],['📖 + ❤️ = ?','Word of God'],['🐑 + 👨‍🌾 = ? (Jesus’ picture of Himself)','Good Shepherd'],['🌊 + 🚶 = ? (Who walked on water?)','Jesus'],['🍞 + 🐟 = ?','Loaves and fish']],
+trivia:[['Who built the ark?','Noah'],['How many days did Jesus fast in the wilderness?','40'],['Who was swallowed by a great fish?','Jonah'],['What is the first book of the Bible?','Genesis'],['Who defeated Goliath?','David'],['Who led the Israelites out of Egypt?','Moses'],['Where was Jesus born?','Bethlehem'],['Who was Jesus’ mother?','Mary'],['What is the last book of the Bible?','Revelation'],['Who received the Ten Commandments?','Moses']],
+riddle:[['I walked with God and was taken. Who am I?','Enoch'],['I betrayed Jesus with a kiss. Who am I?','Judas'],['I denied Jesus three times. Who am I?','Peter'],['My strength was linked to my hair. Who am I?','Samson'],['I climbed a tree to see Jesus. Who am I?','Zacchaeus'],['I was a tax collector who became a disciple. Who am I?','Matthew']],
+scramble:[['SEJUS','Jesus'],['IBBEL','Bible'],['ARYM','Mary'],['ELOV','Love'],['HAFIT','Faith'],['RAPYE','Prayer'],['ESACRG','Grace'],['HURCTH','Church'],['EOCBDE','Obey'],['SLOMAP','Psalms']],
+who:[['Who kissed Jesus to identify Him?','Judas'],['Who denied Jesus three times?','Peter'],['Who led Israel out of Egypt?','Moses'],['Who killed Goliath?','David'],['Who interpreted Pharaoh’s dreams?','Joseph'],['Who was thrown into the lions’ den?','Daniel'],['Who was the first woman?','Eve'],['Who was known for great wisdom and built the temple?','Solomon'],['Who baptized Jesus?','John the Baptist'],['Who climbed a sycamore tree to see Jesus?','Zacchaeus']]
+};
+const gamesDB={};Object.keys(gameBase).forEach(k=>gamesDB[k]=Array.from({length:100},(_,i)=>{const item=gameBase[k][i%gameBase[k].length];return {q:`Level ${i+1}: ${item[0]}`,a:item[1]}}));
+let currentLevel=1,currentGame='emoji',points=0,streak=0,solved=new Set();
+function renderGame(){const item=gamesDB[currentGame][currentLevel-1];$('lvl').textContent=currentLevel;$('gameBox').textContent=item.q;$('gameAns').value='';$('gameFeedback').textContent=solved.has(currentGame+':'+currentLevel)?'Already solved! Choose Next to continue.':''}
+function loadGame(){currentGame=$('gameSelect').value;currentLevel=1;renderGame()}
+function checkAnswer(){const input=$('gameAns').value.trim().toLocaleLowerCase();if(!input)return;const key=currentGame+':'+currentLevel;if(solved.has(key)){$('gameFeedback').textContent='Already solved — try the next level!';return}const answer=gamesDB[currentGame][currentLevel-1].a.toLocaleLowerCase();const ok=input===answer||((answer==='holy spirit'||answer==='word of god'||answer==='good shepherd'||answer==='loaves and fish'||answer==='john the baptist')&&input===answer.replace('the ','').replace('of ','of '));if(ok){solved.add(key);points+=10;streak++;$('pts').textContent=points;$('streak').textContent=streak;$('gameFeedback').textContent='Correct! 🎉 +10 points';if(currentLevel<100)setTimeout(()=>{if(currentLevel<100){currentLevel++;renderGame()}},650)}else{streak=0;$('streak').textContent=streak;$('gameFeedback').textContent='Not quite — try again! Hint: read the question carefully. 🙏'}}
+$('gameSelect').addEventListener('change',loadGame);$('checkAns').addEventListener('click',checkAnswer);$('gameAns').addEventListener('keydown',e=>{if(e.key==='Enter')checkAnswer()});$('nextLevel').addEventListener('click',()=>{if(currentLevel<100){currentLevel++;renderGame()}});$('prevLevel').addEventListener('click',()=>{if(currentLevel>1){currentLevel--;renderGame()}});$('resetGame').addEventListener('click',()=>{points=0;streak=0;solved.clear();$('pts').textContent='0';$('streak').textContent='0';renderGame()});renderGame();
+
+const bibleVerses={
+'John 3:16':'For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life. (NIV)',
+'Psalm 23:1':'The LORD is my shepherd, I lack nothing. (NIV)',
+'Genesis 1:1':'In the beginning God created the heavens and the earth. (NIV)',
+'Romans 8:28':'And we know that in all things God works for the good of those who love him, who have been called according to his purpose. (NIV)',
+'Philippians 4:13':'I can do all this through him who gives me strength. (NIV)',
+'Jeremiah 29:11':'“For I know the plans I have for you,” declares the LORD, “plans to prosper you and not to harm you, plans to give you hope and a future.” (NIV)',
+'Proverbs 3:5–6':'Trust in the LORD with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight. (NIV)',
+'Isaiah 41:10':'So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand. (NIV)',
+'Micah 6:8':'And what does the LORD require of you? To act justly and to love mercy and to walk humbly with your God. (NIV)',
+'Psalm 119:105':'Your word is a lamp for my feet, a light on my path. (NIV)'
+};
+function loadBible(){const ref=$('bibleBook').value;$('bibleText').textContent=ref+' — '+bibleVerses[ref];$('bibleAnim').animate([{transform:'scale(.8)',opacity:.4},{transform:'scale(1.08)',opacity:1},{transform:'scale(1)',opacity:1}],{duration:550,easing:'ease-out'});$('bibleAnim').textContent='✨📖✨'}
+$('loadBible').addEventListener('click',loadBible);$('bibleBook').addEventListener('change',loadBible);loadBible();
+
+// Firebase-backed R.I.Y chat. Configure firebase-config.js before using this feature.
+const firebaseReady = Boolean(window.RIY_FIREBASE_CONFIG && window.RIY_FIREBASE_CONFIG.apiKey &&
+  window.RIY_FIREBASE_CONFIG.apiKey !== "PASTE_YOUR_FIREBASE_API_KEY_HERE");
+let riyAuth=null, riyDb=null, signedInUser=null, activeChatMode="group", activeThreadId=null, activeUnsubscribe=null, accountSetupInProgress=false;
+const $status = (message) => { const el=$('regMsg'); if(el) el.textContent=message; };
+const cleanUsername = value => value.trim().replace(/\s+/g,' ');
+const usernameKey = value => value.toLowerCase().replace(/[^a-z0-9_]/g,'');
+const internalEmail = value => usernameKey(value)+'@riy.local';
+
+if (firebaseReady && window.firebase) {
+  try {
+    if (!firebase.apps.length) firebase.initializeApp(window.RIY_FIREBASE_CONFIG);
+    riyAuth = firebase.auth();
+    riyDb = firebase.database();
+    riyAuth.onAuthStateChanged(async user => {
+      signedInUser = user;
+      if (user && accountSetupInProgress) return;
+      if (!user) {
+        $('registerCard').style.display='block';
+        $('chatWrap').style.display='none';
+        $('chatMsgs').replaceChildren();
+        if(activeUnsubscribe){activeUnsubscribe();activeUnsubscribe=null;}
+        return;
+      }
+      await activateRiyUser(user);
+    });
+  } catch(error) {
+    console.error(error);
+  }
+} else {
+  $status('Firebase is not configured yet. Follow README.md to connect your Firebase project.');
 }
-function startCallPrompt(isAudioOnly){
- const target = prompt('Who to call? Enter their Call ID (shown under How calls work) e.g. jason-123\\nAsk them to share their ID:');
- if(!target) return;
- startCall(target.trim(), isAudioOnly);
+
+async function createRiyAccount() {
+  if(!riyAuth || !riyDb){$status('Firebase is not configured yet. Follow README.md first.');return;}
+  const username=cleanUsername($('authUsername').value);
+  const key=usernameKey(username);
+  const password=$('authPassword').value;
+  if(!/^[A-Za-z0-9_]{3,20}$/.test(username)){ $status('Username must be 3–20 characters: letters, numbers, and underscores only.');return; }
+  if(password.length<8){$status('Use a password with at least 8 characters.');return;}
+  const reservation=riyDb.ref('usernames/'+key);
+  try {
+    const existing=await reservation.get();
+    if(existing.exists()){$status('That username is already taken. Try another.');return;}
+    accountSetupInProgress=true;
+    const credential=await riyAuth.createUserWithEmailAndPassword(internalEmail(username),password);
+    try {
+      // The database rule permits only the first reservation for each username.
+      await reservation.set({uid:credential.user.uid, username:username});
+      await riyDb.ref('users/'+credential.user.uid).set({
+        username:username, usernameKey:key, createdAt:firebase.database.ServerValue.TIMESTAMP
+      });
+      accountSetupInProgress=false;
+      await activateRiyUser(credential.user);
+      $status('Account created. Welcome to R.I.Y!');
+    } catch(error) {
+      accountSetupInProgress=false;
+      await credential.user.delete().catch(()=>{});
+      await riyAuth.signOut().catch(()=>{});
+      $status('Could not finish setting up your account. The username may have just been taken; please try another.');
+    }
+  } catch(error) {
+    accountSetupInProgress=false;
+    $status(firebaseErrorMessage(error));
+  }
 }
-async function startCall(peerId, isAudioOnly){
- try{
-   const constraints = {audio:true, video: !isAudioOnly};
-   localStream = await navigator.mediaDevices.getUserMedia(constraints);
-   document.getElementById('callModal').classList.remove('hidden');document.getElementById('callModal').classList.add('flex');
-   document.getElementById('callName').innerText=peerId;document.getElementById('callStatus').innerText=isAudioOnly?'Voice calling...':'Video calling...';
-   if(!isAudioOnly){document.getElementById('localVideo').srcObject=localStream;document.getElementById('localVideo').classList.remove('hidden');}
-   const call = peer.call(peerId, localStream, {metadata:{name:currentUsername}});
-   handleCall(call, isAudioOnly);
- }catch(e){alert('Allow mic/camera: '+e.message);}
+async function activateRiyUser(user) {
+  try {
+    const profileSnap = await riyDb.ref('users/'+user.uid).get();
+    if (!profileSnap.exists()) {
+      await riyAuth.signOut();
+      $status('Your profile was not found. Please create an account again or contact the R.I.Y admin.');
+      return;
+    }
+    const profile=profileSnap.val();
+    signedInUser={...user, riyUsername:profile.username, riyUsernameKey:profile.usernameKey};
+    $('registerCard').style.display='none';
+    $('chatWrap').style.display='flex';
+    $('chatUserDisplay').textContent=profile.username+' • R.I.Y';
+    $('chatStatus').textContent='Signed in • Ephesians 4:3';
+    setChatMode('group');
+  } catch(error) {
+    $status('Could not load your profile: '+error.message);
+  }
 }
-function handleCall(call, isAudioOnly){
- currentCall=call;
- call.on('stream', remoteStream=>{
-   document.getElementById('callStatus').innerText='Connected ✅';
-   if(remoteStream.getVideoTracks().length>0){document.getElementById('remoteVideo').srcObject=remoteStream;document.getElementById('remoteVideo').classList.remove('hidden');} else {document.getElementById('remoteAudio').srcObject=remoteStream;}
- });
- call.on('close', endCall);
- call.on('error', endCall);
+async function signInRiyAccount() {
+  if(!riyAuth || !riyDb){$status('Firebase is not configured yet. Follow README.md first.');return;}
+  const username=cleanUsername($('authUsername').value);
+  const password=$('authPassword').value;
+  const key=usernameKey(username);
+  if(!/^[A-Za-z0-9_]{3,20}$/.test(username) || !password){$status('Enter your username and password.');return;}
+  try {
+    const nameSnap=await riyDb.ref('usernames/'+key).get();
+    if(!nameSnap.exists()){$status('Username not found. Check it or create an account.');return;}
+    await riyAuth.signInWithEmailAndPassword(internalEmail(username),password);
+    $status('');
+  } catch(error) { $status(firebaseErrorMessage(error)); }
 }
-async function answerCall(){
- if(!incomingCallData) return;
- try{
-   const isVideo = confirm('Answer with VIDEO? OK=video, Cancel=voice only');
-   const constraints = {audio:true, video: isVideo};
-   localStream = await navigator.mediaDevices.getUserMedia(constraints);
-   document.getElementById('incomingCall').classList.add('hidden');
-   document.getElementById('callModal').classList.remove('hidden');document.getElementById('callModal').classList.add('flex');
-   document.getElementById('callName').innerText=incomingCallData.metadata?.name||incomingCallData.peer;
-   document.getElementById('callStatus').innerText='Connected ✅';
-   if(isVideo){document.getElementById('localVideo').srcObject=localStream;document.getElementById('localVideo').classList.remove('hidden');}
-   incomingCallData.answer(localStream);
-   handleCall(incomingCallData, !isVideo);
-   incomingCallData=null;
- }catch(e){alert('Allow mic/camera');}
+function firebaseErrorMessage(error) {
+  const code=error && error.code;
+  if(code==='auth/invalid-credential'||code==='auth/wrong-password'||code==='auth/user-not-found')return 'Username or password is incorrect.';
+  if(code==='auth/email-already-in-use')return 'That username is already registered. Sign in instead.';
+  if(code==='auth/weak-password')return 'Choose a stronger password with at least 8 characters.';
+  if(code==='auth/too-many-requests')return 'Too many attempts. Please wait a while and try again.';
+  if(code==='auth/network-request-failed')return 'Network error. Check your internet connection.';
+  return (error && error.message) ? error.message : 'Something went wrong. Please try again.';
 }
-function declineCall(){if(incomingCallData){incomingCallData.close();}document.getElementById('incomingCall').classList.add('hidden');incomingCallData=null;}
-function endCall(){if(currentCall) currentCall.close();if(localStream) localStream.getTracks().forEach(t=>t.stop());document.getElementById('callModal').classList.add('hidden');document.getElementById('remoteVideo').classList.add('hidden');document.getElementById('localVideo').classList.add('hidden');currentCall=null;localStream=null;document.getElementById('callStatus').innerText='Call ended';}
-function toggleMute(){if(!localStream) return;const track=localStream.getAudioTracks()[0];if(track){track.enabled=!track.enabled;document.getElementById('muteBtn').innerText=track.enabled?'🎤':'🔇';}}
-function toggleVideo(){if(!localStream) return;const track=localStream.getVideoTracks()[0];if(track){track.enabled=!track.enabled;document.getElementById('videoBtn').innerText=track.enabled?'📹':'🚫';}}
+$('signUpBtn').addEventListener('click',createRiyAccount);
+$('signInBtn').addEventListener('click',signInRiyAccount);
+$('authPassword').addEventListener('keydown',e=>{if(e.key==='Enter')signInRiyAccount()});
+$('logoutChat').addEventListener('click',()=>{if(riyAuth)riyAuth.signOut();});
+$('groupModeBtn').addEventListener('click',()=>setChatMode('group'));
+$('privateModeBtn').addEventListener('click',()=>{setChatMode('private');$('dmUsername').focus()});
+$('openDmBtn').addEventListener('click',openPrivateChat);
+$('dmUsername').addEventListener('keydown',e=>{if(e.key==='Enter')openPrivateChat()});
+
+function setChatMode(mode, threadId=null, otherName=null) {
+  if(!signedInUser || !riyDb)return;
+  activeChatMode=mode; activeThreadId=threadId;
+  if(activeUnsubscribe){activeUnsubscribe();activeUnsubscribe=null;}
+  $('privateControls').style.display=mode==='private'?'block':'none';
+  $('groupModeBtn').className='btn'+(mode==='group'?'':' btn-outline');
+  $('privateModeBtn').className='btn'+(mode==='private'?'':' btn-outline');
+  $('chatTitle').textContent=mode==='group'?'🌍 R.I.Y Group Chat':'🔒 Private chat'+(otherName?' with '+otherName:'');
+  $('chatMsgs').replaceChildren();
+  const path=mode==='group'?'groupMessages':('privateMessages/'+threadId+'/messages');
+  const query=riyDb.ref(path).limitToLast(100);
+  activeUnsubscribe=query.on('value',snap=>{
+    const box=$('chatMsgs');box.replaceChildren();
+    snap.forEach(child=>{
+      const m=child.val()||{};
+      const me=m.senderUid===signedInUser.uid;
+      appendMessage(box,{user:me?'You':(m.senderName||'R.I.Y Member'),text:m.text||'',time:formatChatTime(m.createdAt),me});
+    });
+    if(!snap.exists()){
+      const p=document.createElement('p');p.className='empty';p.textContent='No messages yet. Start with a kind word or Bible verse. 🙏';box.append(p);
+    }
+    box.scrollTop=box.scrollHeight;
+  },error=>{
+    const p=document.createElement('p');p.className='empty';p.textContent='Chat could not load: '+error.message;$('chatMsgs').replaceChildren(p);
+  });
+}
+function formatChatTime(value){
+  if(!value)return '';
+  return new Date(value).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+}
+async function openPrivateChat() {
+  if(!signedInUser || !riyDb)return;
+  const username=cleanUsername($('dmUsername').value);
+  const key=usernameKey(username);
+  if(!/^[A-Za-z0-9_]{3,20}$/.test(username)){$('dmStatus').textContent='Enter a valid username (3–20 letters, numbers, or underscores).';return;}
+  try {
+    const snap=await riyDb.ref('usernames/'+key).get();
+    if(!snap.exists()){$('dmStatus').textContent='No member found with that username.';return;}
+    const target=snap.val();
+    if(target.uid===signedInUser.uid){$('dmStatus').textContent='That is your own username. Choose another member.';return;}
+    const ids=[signedInUser.uid,target.uid].sort();
+    const threadId=ids.join('_');
+    const threadRef=riyDb.ref('privateMessages/'+threadId);
+    const existing=await threadRef.get();
+    if(!existing.exists()){
+      await threadRef.set({participants:{[ids[0]]:true,[ids[1]]:true},createdAt:firebase.database.ServerValue.TIMESTAMP});
+    }
+    $('dmStatus').textContent='Private conversation opened.';
+    setChatMode('private',threadId,target.username);
+  } catch(error) {
+    $('dmStatus').textContent='Could not open private chat: '+error.message;
+  }
+}
+$('chatForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const text=$('chatInput').value.trim();
+  if(!text || !signedInUser || !riyDb)return;
+  if(text.length>1000){$('chatStatus').textContent='Messages must be 1,000 characters or fewer.';return;}
+  const path=activeChatMode==='group'?'groupMessages':('privateMessages/'+activeThreadId+'/messages');
+  if(activeChatMode==='private'&&!activeThreadId){$('chatStatus').textContent='Open a private conversation first.';return;}
+  try {
+    await riyDb.ref(path).push({
+      senderUid:signedInUser.uid, senderName:signedInUser.riyUsername,
+      text:text, createdAt:firebase.database.ServerValue.TIMESTAMP
+    });
+    $('chatInput').value='';$('chatInput').focus();
+  } catch(error) {
+    $('chatStatus').textContent='Message not sent: '+error.message;
+  }
+});
+
+// Safe text-only local Q&A and meme boards remain device-local until separately connected to a database.
+function readStore(key,fallback){try{const v=JSON.parse(localStorage.getItem(key));return Array.isArray(v)?v:fallback}catch{return fallback}}
+function writeStore(key,value){try{localStorage.setItem(key,JSON.stringify(value))}catch{}}
+function appendMessage(box,{user,text,time,me}){const msg=document.createElement('div');msg.className='msg '+(me?'me':'other');const name=document.createElement('div');name.style.cssText='font-size:11px;font-weight:800;color:'+(me?'#000':'#ffd700');name.textContent=user;const body=document.createElement('div');body.textContent=text;const meta=document.createElement('div');meta.className='msg-meta';meta.textContent=time;msg.append(name,body,meta);box.append(msg)}
+let qaList=readStore('riy_demo_qa',[]),memeList=readStore('riy_demo_memes',[]);
+function renderQA(){const box=$('qaBox');box.replaceChildren();if(!qaList.length){box.innerHTML='<p class="empty">No questions yet — start a respectful discussion.</p>';return}qaList.slice(-40).forEach(q=>{const card=document.createElement('div');card.className='card';const p=document.createElement('p');p.textContent='Q: '+q;const answer=document.createElement('p');answer.style.color='var(--gold)';answer.textContent='A: Bring this question to the group for a Scripture-guided discussion. 🙏';card.append(p,answer);box.append(card)})}
+function renderMemes(){const box=$('memeBox');box.replaceChildren();if(!memeList.length){const p=document.createElement('p');p.className='muted';p.textContent='Share a clean joke, encouraging thought, or meme caption.';box.append(p);return}memeList.slice(-40).forEach(t=>{const card=document.createElement('div');card.className='card';card.textContent=t;box.append(card)})}
+$('qaForm').addEventListener('submit',e=>{e.preventDefault();const v=$('qaInput').value.trim();if(!v)return;qaList.push(v);qaList=qaList.slice(-40);writeStore('riy_demo_qa',qaList);$('qaInput').value='';renderQA()});
+$('memeForm').addEventListener('submit',e=>{e.preventDefault();const v=$('memeInput').value.trim();if(!v)return;memeList.push(v);memeList=memeList.slice(-40);writeStore('riy_demo_memes',memeList);$('memeInput').value='';renderMemes()});renderQA();renderMemes();
+
+// Touch/mouse drawing canvas with high-DPI support.
+const canvas=$('colorCanvas'),ctx=canvas.getContext('2d');let brush='#ffd700',drawing=false,last=null;
+function setupCanvas(){const ratio=window.devicePixelRatio||1;const rect=canvas.getBoundingClientRect();if(!rect.width)return;const snapshot=document.createElement('canvas');snapshot.width=canvas.width;snapshot.height=canvas.height;snapshot.getContext('2d').drawImage(canvas,0,0);canvas.width=Math.round(rect.width*ratio);canvas.height=Math.round(rect.width*(440/680)*ratio);ctx.setTransform(ratio,0,0,ratio,0,0);ctx.lineCap='round';ctx.lineJoin='round';ctx.lineWidth=5;ctx.strokeStyle=brush;ctx.clearRect(0,0,rect.width,rect.width*(440/680));ctx.drawImage(snapshot,0,0,snapshot.width,snapshot.height,0,0,rect.width,rect.width*(440/680))}
+function pos(e){const r=canvas.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}
+canvas.addEventListener('pointerdown',e=>{drawing=true;last=pos(e);canvas.setPointerCapture(e.pointerId);ctx.beginPath();ctx.moveTo(last.x,last.y)});
+canvas.addEventListener('pointermove',e=>{if(!drawing)return;const p=pos(e);ctx.strokeStyle=brush;ctx.lineWidth=5;ctx.lineTo(p.x,p.y);ctx.stroke();last=p});
+function stopDraw(){drawing=false;last=null}canvas.addEventListener('pointerup',stopDraw);canvas.addEventListener('pointercancel',stopDraw);
+$('goldBrush').addEventListener('click',()=>brush='#ffd700');$('whiteBrush').addEventListener('click',()=>brush='#ffffff');$('clearCanvas').addEventListener('click',()=>ctx.clearRect(0,0,canvas.width,canvas.height));
+$('downloadDrawing').addEventListener('click',()=>{const a=document.createElement('a');a.download='riy-golden-tree-drawing.png';a.href=canvas.toDataURL('image/png');a.click()});
+
+// Generate simple downloadable SVG Bible wallpapers.
+const wallpapers=[['ROOTED IN CHRIST','Colossians 2:7'],['BE STILL','Psalm 46:10'],['WALK BY FAITH','2 Corinthians 5:7'],['GOD IS WITH YOU','Isaiah 41:10'],['THE LORD IS MY SHEPHERD','Psalm 23:1'],['LET YOUR LIGHT SHINE','Matthew 5:16'],['PRAY WITHOUT CEASING','1 Thessalonians 5:17'],['FAITH OVER FEAR','Psalm 56:3']];
+const wpGrid=$('wpGrid');
+function svgEscape(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+wallpapers.forEach(([title,verse],i)=>{const card=document.createElement('button');card.type='button';card.className='wallpaper';card.innerHTML='<span class="tree">🌳 ✨</span><span></span><span class="verse"></span><span style="font-size:11px;color:#aaa">Tap to save wallpaper</span>';card.children[1].textContent=title;card.children[2].textContent=verse;card.addEventListener('click',()=>{const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920"><defs><radialGradient id="g"><stop stop-color="#25200b"/><stop offset="1" stop-color="#050505"/></radialGradient></defs><rect width="1080" height="1920" fill="url(#g)"/><circle cx="540" cy="650" r="270" fill="none" stroke="#FFD700" stroke-opacity=".4" stroke-width="3"/><text x="540" y="610" text-anchor="middle" font-size="95" fill="#FFD700">✦</text><text x="540" y="850" text-anchor="middle" font-family="Georgia,serif" font-size="${title.length>18?54:68}" font-weight="bold" fill="#FFD700">${svgEscape(title)}</text><text x="540" y="940" text-anchor="middle" font-family="Arial,sans-serif" font-size="42" fill="#F5F3E8">${svgEscape(verse)}</text><path d="M300 1050 H780" stroke="#FFD700" stroke-width="3" stroke-opacity=".65"/><text x="540" y="1160" text-anchor="middle" font-family="Georgia,serif" font-size="38" fill="#F5F3E8">ROOTS IN YAHWEH</text><text x="540" y="1220" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" fill="#B8A86A">R.I.Y. • GROW DEEP IN FAITH</text></svg>`;const blob=new Blob([svg],{type:'image/svg+xml;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`riy-wallpaper-${i+1}.svg`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)});wpGrid.append(card)});
+</script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+  import { getAuth } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+  import { getDatabase } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js";
+  import { firebaseConfig } from "./firebase-config.js";
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const database = getDatabase(app);
+
+  window.firebaseApp = app;
+  window.firebaseAuth = auth;
+  window.firebaseDatabase = database;
+
+  console.log("Firebase connected successfully!");
 </script>
 </body>
 </html>
